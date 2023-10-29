@@ -8,8 +8,8 @@ public class PlayerMoveAround : MonoBehaviour {
     //public AudioSource WalkSFX;
     public Rigidbody2D rb2D;
     private bool FaceRight = true; // determine which way player is facing.
-    public static float runSpeed = 10f;
-    public float startSpeed = 10f;
+    public static float runSpeed = 7f;
+    public float startSpeed = 7f;
     public bool isAlive = true;
 
     void Start(){
