@@ -6,6 +6,7 @@ TagManager:
   tags:
   - note
   - GameHandler
+  - NavHandler
   layers:
   - Default
   - TransparentFX
