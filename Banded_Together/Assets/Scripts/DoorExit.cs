@@ -27,7 +27,6 @@ public class DoorExit : MonoBehaviour{
             exitClosed.SetActive(false);
             exitOpen.SetActive(true);
             gameObject.GetComponent<Collider2D>().enabled = true;
-            Debug.Log("door open");
         }
         else {
             gameObject.GetComponent<Collider2D>().enabled = false;
@@ -36,7 +35,6 @@ public class DoorExit : MonoBehaviour{
 
     public void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.tag == "Player"){
-            Debug.Log("entering new scene");
             SceneManager.LoadScene(NextLevel);
         }
     }
