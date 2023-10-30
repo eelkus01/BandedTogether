@@ -22,7 +22,6 @@ public class TriggerHandler : MonoBehaviour
             {
                 Debug.Log("Detected Keydown");
                 GameObject lowestNoteAboveMinus3 = FindLowestNoteAboveY(-3.5f);
-                lowestNoteAboveMinus3 = 
                 NoteHandler noteScript = lowestNoteAboveMinus3.GetComponent<NoteHandler>();
                 // check if input is correct for the note - 1 corresponds to g, 2 to a, 3 to b
                 string targetNote = noteScript.noteName;
