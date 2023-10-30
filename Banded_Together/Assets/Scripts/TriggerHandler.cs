@@ -3,14 +3,18 @@ using System.Collections.Generic;
 
 public class TriggerHandler : MonoBehaviour
 {
+    public AudioClip g;
+    public AudioClip a;
+    public AudioClip b;
+    private AudioSource audioSource;
     public List<GameObject> notes; // List of note game objects
     public float hitThreshold = 0.2f; // Adjust this threshold for timing accuracy
-
     private void Start()
     {
         // Find all game objects with the "Note" tag and add them to the notes list
         GameObject[] noteArray = GameObject.FindGameObjectsWithTag("Note");
         notes.AddRange(noteArray);
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -30,7 +34,22 @@ public class TriggerHandler : MonoBehaviour
                     if (noteScript.isCollidingWithHitBar) {
                         Debug.Log("Trying to set inactive!");
                         lowestNoteAboveMinus3.SetActive(false);
-                        
+                        if(i == 0)
+                        {
+                            audioSource.clip = g;
+                            audioSource.Play();
+                        }
+                        if (i == 1)
+                        {
+                            audioSource.clip = a;
+                            audioSource.Play();
+                        }
+                        if (i == 2)
+                        {
+                            audioSource.clip = b;
+                            audioSource.Play();
+                        }
+
                     }
                     else {
                         Debug.Log("Not Colliding Though!");
