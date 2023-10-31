@@ -1003,11 +1003,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.39
       objectReference: {fileID: 0}
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1064,8 +1064,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9015675988966217860, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2747018827520766649}
   m_SourcePrefab: {fileID: 100100000, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+--- !u!1 &2747018827520766648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9015675988966217860, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+  m_PrefabInstance: {fileID: 2747018827520766647}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2747018827520766649
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2747018827520766648}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b53a65bcafd004e44b2e3fcd2fc52b78, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3542676558738420347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1143,6 +1172,26 @@ PrefabInstance:
       propertyPath: navHandlerObj
       value: 
       objectReference: {fileID: 1837631264}
+    - target: {fileID: 632083412271949181, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0199552
+      objectReference: {fileID: 0}
+    - target: {fileID: 632083412271949181, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1201426
+      objectReference: {fileID: 0}
+    - target: {fileID: 632083412271949181, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.6587
+      objectReference: {fileID: 0}
+    - target: {fileID: 632083412271949181, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1876
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004119294205680173, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1650476945683471015, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: navHandlerObj
       value: 
