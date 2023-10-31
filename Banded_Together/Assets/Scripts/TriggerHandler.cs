@@ -12,9 +12,12 @@ public class TriggerHandler : MonoBehaviour
     public List<GameObject> notes; // List of note game objects
     public float hitThreshold = 0.2f; // Adjust this threshold for timing accuracy
 
+    public GameObject gameHandler;
+
     public string touch = "touch";
     private void Start()
     {
+        gameHandler = GameObject.Find("GameHandler");
         // Find all game objects with the "Note" tag and add them to the notes list
         GameObject[] noteArray = GameObject.FindGameObjectsWithTag("Note");
         notes.AddRange(noteArray);
@@ -76,7 +79,7 @@ public class TriggerHandler : MonoBehaviour
                             }
                             audioSourceB.Play();
                         }
-
+                        SuccessfulNote();
                     }
                     else {
                         // Debug.Log("Not Colliding Though!");
@@ -105,5 +108,9 @@ public class TriggerHandler : MonoBehaviour
         }
 
         return lowestNote;
+    }
+
+    private void SuccessfulNote(){
+        gameHandler.GetComponent<GameHandler>().AddScore(5);
     }
 }

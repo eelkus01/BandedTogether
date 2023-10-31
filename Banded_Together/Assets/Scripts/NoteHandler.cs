@@ -27,7 +27,6 @@ public class NoteHandler : MonoBehaviour
         if (other.CompareTag("HitBar")){
             // The object is colliding with an object tagged as "HitBar."
             isCollidingWithHitBar = true;
-            Debug.Log("DETECTED COLLIDING WITH HITBAR");
         }
     }
     // This function is called when a collider exits the trigger collider of this object.
@@ -39,7 +38,6 @@ public class NoteHandler : MonoBehaviour
             // Perform actions when the "Player" object exits the trigger zone.
             // You can put your custom logic here.
             isCollidingWithHitBar = false;
-            Debug.Log("EXiTING HITBAR COLLISION");
         }
     }
 }
