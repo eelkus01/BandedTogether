@@ -8,6 +8,7 @@ TagManager:
   - NavHandler
   - Note
   - HitBar
+  - Enemy
   layers:
   - Default
   - TransparentFX
