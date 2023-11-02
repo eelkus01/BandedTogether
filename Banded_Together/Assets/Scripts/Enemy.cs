@@ -12,10 +12,24 @@ public class Enemy : MonoBehaviour
     public bool alive = true;
 
     public int currentHealth;
-    private Rigidbody2D rb2D;        // Reference to the enemy's Rigidbody2D component.
+    private Rigidbody2D rb2D;
+
+
+    // handle flashing red when damaged
+    public Material redFlashMaterial; // Assign the material with the "RedFlashShader" here.
+    public float flashDuration = 0.25f; // Duration of the red flash in seconds.
+
+    private Material originalMaterial;
+    private Renderer rend;
+    private float flashTimer = 0f;
+    private bool isFlashing = false;
+    
 
     private void Start()
     {
+        rend = GetComponent<Renderer>();
+        originalMaterial = rend.material;
+
         currentHealth = startHealth;
 
         rb2D = GetComponent<Rigidbody2D>();
@@ -46,6 +60,18 @@ public class Enemy : MonoBehaviour
             // If the target is null (e.g., player is dead), stop moving.
             rb2D.velocity = Vector2.zero;
         }
+
+        // Check if the enemy is currently flashing.
+        if (isFlashing)
+        {
+            flashTimer -= Time.deltaTime;
+            if (flashTimer <= 0f)
+            {
+                // Stop flashing and restore the original material.
+                rend.material = originalMaterial;
+                isFlashing = false;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -58,6 +84,13 @@ public class Enemy : MonoBehaviour
     }
 
     public void DamageEnemy(int damage) {
+        if (!isFlashing)
+        {
+            // Trigger the red flash effect.
+            rend.material = redFlashMaterial;
+            flashTimer = flashDuration;
+            isFlashing = true;
+        }
         currentHealth -= damage;
         if (currentHealth <= 0) {
             KillEnemy();

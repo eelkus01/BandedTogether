@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &10329699678140014
 SpriteRenderer:
@@ -100,10 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  moveSpeed: 3
-  startHealth: 5
+  moveSpeed: 5
+  startHealth: 3
   alive: 1
   currentHealth: 0
+  redFlashMaterial: {fileID: 2100000, guid: f7864d59ccd904aca9ea443e4b8fb2c0, type: 2}
+  flashDuration: 0.25
 --- !u!50 &2647887198684052489
 Rigidbody2D:
   serializedVersion: 4
