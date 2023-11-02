@@ -9,6 +9,7 @@ TagManager:
   - Note
   - HitBar
   - Enemy
+  - Spellblast
   layers:
   - Default
   - TransparentFX

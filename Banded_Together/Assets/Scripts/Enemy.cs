@@ -7,10 +7,17 @@ public class Enemy : MonoBehaviour
     public Transform target;          // The target to follow (usually the player).
     public float moveSpeed = 3f;     // The speed at which the enemy follows the target.
 
+    public int startHealth = 5;
+
+    public bool alive = true;
+
+    public int currentHealth;
     private Rigidbody2D rb2D;        // Reference to the enemy's Rigidbody2D component.
 
     private void Start()
     {
+        currentHealth = startHealth;
+
         rb2D = GetComponent<Rigidbody2D>();
 
         // Find the player GameObject by name and set its transform as the target.
@@ -38,6 +45,29 @@ public class Enemy : MonoBehaviour
         {
             // If the target is null (e.g., player is dead), stop moving.
             rb2D.velocity = Vector2.zero;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Spellblast"))
+        {
+            DamageEnemy(1);
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void DamageEnemy(int damage) {
+        currentHealth -= damage;
+        if (currentHealth <= 0) {
+            KillEnemy();
+        }
+    }
+
+    public void KillEnemy(){
+        if (alive){
+            alive = false;
+            gameObject.SetActive(false);
         }
     }
 }
