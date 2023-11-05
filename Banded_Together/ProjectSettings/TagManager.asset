@@ -10,6 +10,7 @@ TagManager:
   - HitBar
   - Enemy
   - Spellblast
+  - TargetZone
   layers:
   - Default
   - TransparentFX
