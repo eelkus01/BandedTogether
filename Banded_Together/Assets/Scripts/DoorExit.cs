@@ -7,7 +7,7 @@ public class DoorExit : MonoBehaviour{
     // NOTE: This script depends on the GameHandler having a public int "thePieces"
     // that is updated with each pickup collected.
     public NavHandler navHandler;
-    public string NextLevel = "Jacob_DDR";
+    public string NextLevel = "MainMenu";
     public GameObject exitClosed;
     public GameObject exitOpen;
     public int piecesCollected;

@@ -12706,6 +12706,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4268535236664414309, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4903632103843439506, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_Name
       value: PARTS
@@ -12722,6 +12726,14 @@ PrefabInstance:
       propertyPath: navHandlerObj
       value: 
       objectReference: {fileID: 1837631264}
+    - target: {fileID: 8480726062439299004, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8938038818161163836, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12778,6 +12790,10 @@ PrefabInstance:
     - target: {fileID: 2419819987183743098, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: NextLevel
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: navHandler
