@@ -12112,11 +12112,11 @@ PrefabInstance:
       objectReference: {fileID: 1837631264}
     - target: {fileID: 632083412271949181, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0199552
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 632083412271949181, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1201426
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 632083412271949181, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12266,6 +12266,10 @@ PrefabInstance:
     - target: {fileID: 2419819987183743098, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: NextLevel
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: navHandler
