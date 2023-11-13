@@ -24,8 +24,8 @@ public class NavHandler : MonoBehaviour {
     }
 
     void UpdateParts(){
-        Text partsTextB = partsText.GetComponent<Text>();
-        partsTextB.text = "Parts Obtained: " + partsGotten + "/" + partsNeeded;
+        // Text partsTextB = partsText.GetComponent<Text>();
+        // partsTextB.text = "Parts Obtained: " + partsGotten + "/" + partsNeeded;
     }
 
     public void StartGame(){

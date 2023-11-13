@@ -5,24 +5,50 @@ using UnityEngine.UI;
 
 public class GameHandler:MonoBehaviour
 {
-
-    public GameObject scoreText;
-    private int playerScore = 0;
-
+    public List<InstrumentIndicator> instrumentIndicators;
+    private int activeInstrumentID;
     void Start()
     {
-        UpdateScore();
+        GameObject[] instrumentIndicatorObjects = GameObject.FindGameObjectsWithTag("InstrumentIndicator");
+        instrumentIndicators = new List<InstrumentIndicator>();
+
+        foreach (var obj in instrumentIndicatorObjects)
+        {
+            InstrumentIndicator indicator = obj.GetComponent<InstrumentIndicator>();
+            if (indicator != null)
+            {
+                instrumentIndicators.Add(indicator);
+            }
+        }
+    }
+    
+    void Update() {
+        CheckForKeyPress();
     }
 
-    public void AddScore(int points)
+    private void CheckForKeyPress()
     {
-        playerScore += points;
-        UpdateScore();
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            UpdateSelectedInstrument(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            UpdateSelectedInstrument(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            UpdateSelectedInstrument(3);
+        }
     }
 
-    void UpdateScore()
+    private void UpdateSelectedInstrument(int selectedInstrumentID)
     {
-        Text scoreTextB = scoreText.GetComponent<Text>();
-        scoreTextB.text = "SCORE: " + playerScore;
+        activeInstrumentID = selectedInstrumentID;
+        foreach (var indicator in instrumentIndicators)
+        {
+            indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
+        }
     }
+
 }
