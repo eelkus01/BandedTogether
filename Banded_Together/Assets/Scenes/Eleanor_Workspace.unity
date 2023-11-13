@@ -12424,6 +12424,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7110216910592537801, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+      propertyPath: x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110216910592537801, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+      propertyPath: y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7110216910592537801, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 2747018827520766649}
     - target: {fileID: 7434801921183184686, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_Size.y
       value: 1.5
@@ -12454,7 +12466,7 @@ Animator:
   m_GameObject: {fileID: 2747018827520766648}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b53a65bcafd004e44b2e3fcd2fc52b78, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9c85be9c936fa4cdfbba217280aa3b99, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

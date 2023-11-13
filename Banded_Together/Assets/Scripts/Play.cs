@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Play : MonoBehaviour
 {
     public GameObject creditsUI;
+    public GameObject rules;
 
     public void PlayGame()
     {
@@ -21,6 +22,18 @@ public class Play : MonoBehaviour
     public void CloseCredits()
     {
         creditsUI.SetActive(false);
+
+    }
+
+    public void ShowRules()
+    {
+        rules.SetActive(true);
+
+    }
+
+    public void CloseRules()
+    {
+        rules.SetActive(false);
 
     }
 
