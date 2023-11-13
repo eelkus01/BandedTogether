@@ -12,6 +12,7 @@ TagManager:
   - Spellblast
   - TargetZone
   - InstrumentIndicator
+  - InstrumentBorder
   layers:
   - Default
   - TransparentFX
