@@ -15,7 +15,7 @@ public class PlayerMoveAround : MonoBehaviour {
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 24f;
-    private float dashingTime = 0.2f;
+    private float dashingTime = 0.1f;
     private float dashingCooldown = 1f;
 
     void Start(){
@@ -46,7 +46,6 @@ public class PlayerMoveAround : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.RightShift) && canDash)
             {
                 StartCoroutine(Dash());
-                print("hi");
             }
 
             // Turning. Reverse if input is moving the Player right and Player faces left.
