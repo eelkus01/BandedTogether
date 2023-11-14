@@ -9,12 +9,19 @@ public class InstrumentIndicator : MonoBehaviour
     public Color originalColor;
     private Renderer rend;
     private Image childImage;
+    public GameObject borderOn;
     public int instrumentID;
     // Start is called before the first frame update
     void Start()
     {
         childImage = GetComponentInChildren<Image>();
         originalColor = childImage.color;
+        //make first instrument selected from start
+        if (instrumentID == 1) {
+            borderOn.SetActive(true);
+        } else {
+            borderOn.SetActive(false);
+        }
     }
 
     public void SetSelectedState(bool selected) {
@@ -25,10 +32,10 @@ public class InstrumentIndicator : MonoBehaviour
 
     private void UpdateAppearanceOnSelectAction(){
         if(isSelected) {
-            childImage.color = Color.red;
+            borderOn.SetActive(true);
         }
         else{
-            childImage.color = originalColor;
+            borderOn.SetActive(false);
         }
     }
 }
