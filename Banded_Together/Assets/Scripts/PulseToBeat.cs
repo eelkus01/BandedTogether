@@ -5,7 +5,7 @@ using UnityEngine.UI;
  
 public class PulseToBeat : MonoBehaviour {
  
-    public float BPM = 100f;
+    public float BPM = 20f;
     public Color StartColor;
     public Color EndColor;
     //private Color rendColor;
