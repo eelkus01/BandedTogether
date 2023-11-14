@@ -79,7 +79,14 @@ public class PlayerMoveAround : MonoBehaviour {
     {
         canDash = false;
         isDashing = true;
-        rb2D.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        if (FaceRight)
+        {
+            rb2D.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+        }
+        else
+        {
+            rb2D.velocity = new Vector2(-transform.localScale.x * dashingPower, 0f);
+        }
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
