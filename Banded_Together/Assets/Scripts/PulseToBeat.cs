@@ -17,7 +17,7 @@ public class PulseToBeat : MonoBehaviour {
     
     // Update is called once per frame
     void Update () {
-        var baseValue = Mathf.Cos(((Time.time * Mathf.PI) * (BPM / 60f)) % Mathf.PI);
+        var baseValue = Mathf.Cos((((Time.time * Mathf.PI) * (BPM / 60f)) % Mathf.PI) - Mathf.PI);
         var target = Color.Lerp(EndColor, StartColor, baseValue);
         GetComponent<Image>().color = target;
     }
