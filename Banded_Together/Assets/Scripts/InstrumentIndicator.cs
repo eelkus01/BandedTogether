@@ -32,11 +32,9 @@ public class InstrumentIndicator : MonoBehaviour
 
     private void UpdateAppearanceOnSelectAction(){
         if(isSelected) {
-            //childImage.color = Color.red;
             borderOn.SetActive(true);
         }
         else{
-            //childImage.color = originalColor;
             borderOn.SetActive(false);
         }
     }

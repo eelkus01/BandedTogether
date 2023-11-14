@@ -13,6 +13,7 @@ TagManager:
   - TargetZone
   - InstrumentIndicator
   - InstrumentBorder
+  - InstArt
   layers:
   - Default
   - TransparentFX
