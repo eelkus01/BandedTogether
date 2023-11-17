@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = GetComponentInChildren<Renderer>();
         originalMaterial = rend.material;
 
         currentHealth = startHealth;
