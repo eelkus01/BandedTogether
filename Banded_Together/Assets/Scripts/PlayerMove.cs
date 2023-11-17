@@ -12,9 +12,12 @@ public class PlayerMoveAround : MonoBehaviour {
     public float startSpeed = 7f;
     public bool isAlive = true;
 
+    public float doubleTapTimeThreshold = 0.5f;
+    private float lastTapTime;
+
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 24f;
+    private float dashingPower = 10f;
     private float dashingTime = 0.1f;
     private float dashingCooldown = 1f;
 
@@ -26,13 +29,15 @@ public class PlayerMoveAround : MonoBehaviour {
     void Update(){
         //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
         //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
+        if (isDashing)
+        {
+            return;
+        }
         Vector3 hvMove = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
         if (isAlive == true){
+            
             transform.position = transform.position + hvMove * runSpeed * Time.deltaTime;
-            if (isDashing)
-            {
-                return;
-            }
+            
             if ((Input.GetAxis("Horizontal") != 0) || (Input.GetAxis("Vertical") != 0)){
             //     anim.SetBool ("Walk", true);
             //     if (!WalkSFX.isPlaying){
@@ -43,9 +48,15 @@ public class PlayerMoveAround : MonoBehaviour {
             //     WalkSFX.Stop();
             }
 
-            if (Input.GetKeyDown(KeyCode.RightShift) && canDash)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && canDash)
             {
-                StartCoroutine(Dash());
+                if (Time.time - lastTapTime < doubleTapTimeThreshold)
+                {
+                    // Perform double tap right arrow action
+                    StartCoroutine(Dash());
+                }
+
+                lastTapTime = Time.time;
             }
 
             // Turning. Reverse if input is moving the Player right and Player faces left.
@@ -79,14 +90,9 @@ public class PlayerMoveAround : MonoBehaviour {
     {
         canDash = false;
         isDashing = true;
-        if (FaceRight)
-        {
-            rb2D.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-        }
-        else
-        {
-            rb2D.velocity = new Vector2(-transform.localScale.x * dashingPower, 0f);
-        }
+        
+        rb2D.velocity = new Vector2(transform.localScale.y * dashingPower, 0f);
+        
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
