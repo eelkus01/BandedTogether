@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9144739760661859221}
   - component: {fileID: 7110216910592537801}
   - component: {fileID: 2908412271888037129}
+  - component: {fileID: 201703741504082187}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -68,7 +69,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05310069, y: -0.42170465}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -79,7 +80,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7829517, y: 0.82016015}
   m_EdgeRadius: 0
 --- !u!50 &9144739760661859221
 Rigidbody2D:
@@ -89,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6894511932609115104}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -120,9 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c4dd7319381d4828b8350e7a7dc220b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 6760633715104361099}
-  x: 0
-  y: 0
+  anim: {fileID: 6852271572385833640}
+  x: 1
+  y: 1
 --- !u!114 &2908412271888037129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +139,21 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   startSpeed: 10
   isAlive: 1
+  doubleTapTimeThreshold: 0.5
+--- !u!114 &201703741504082187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6894511932609115104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656ba95765669473e99cf24c8edcc818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellblastPrefab: {fileID: 67549156384315453, guid: 3aa563fc6af39401cbadcd841c2eb9f5, type: 3}
+  cooldownDuration: 0.5
 --- !u!1 &9015675988966217860
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6781709548342564340}
   - component: {fileID: 4299500445195818665}
-  - component: {fileID: 6760633715104361099}
+  - component: {fileID: 6852271572385833640}
   m_Layer: 0
   m_Name: playerArt
   m_TagString: Untagged
@@ -163,8 +179,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9015675988966217860}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.74, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,7 +239,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6760633715104361099
+--- !u!95 &6852271572385833640
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
