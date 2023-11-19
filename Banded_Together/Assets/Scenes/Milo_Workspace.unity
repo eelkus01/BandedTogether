@@ -22443,7 +22443,7 @@ GameObject:
   - component: {fileID: 1336121422}
   - component: {fileID: 1336121421}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: PauseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23571,9 +23571,25 @@ PrefabInstance:
       propertyPath: BPM
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 5643651540611509471, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643651540611509471, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5979059199460863437, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625907899662499558, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625907899662499558, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6654456061510012440, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: borderOn
@@ -23591,17 +23607,33 @@ PrefabInstance:
       propertyPath: BPM
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8338939949073241070, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338939949073241070, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8364109289072796432, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: borderOn
       value: 
       objectReference: {fileID: 896462412}
+    - target: {fileID: 8379069890787536452, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379069890787536452, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -300
+      objectReference: {fileID: 0}
     - target: {fileID: 9198029829089362654, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_TagString
       value: InstArt
       objectReference: {fileID: 0}
     - target: {fileID: 9211906706326570209, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: GameplayCanvas
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1416003845711079266, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}

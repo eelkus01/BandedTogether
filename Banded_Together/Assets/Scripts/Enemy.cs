@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour
     public void KillEnemy(){
         if (alive){
             alive = false;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
