@@ -22887,6 +22887,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2531198715463016171, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.b
+      value: 0.20643972
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531198715463016171, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.g
+      value: 0.16834284
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531198715463016171, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531198715463016171, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: NextLevel
       value: MainMenu
@@ -22898,6 +22914,10 @@ PrefabInstance:
     - target: {fileID: 6454942821106574631, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915163732145326021, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

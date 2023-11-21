@@ -8,7 +8,6 @@ public class GameHandler:MonoBehaviour
 {
     public List<InstrumentIndicator> instrumentIndicators;
     public int activeInstrumentID;
-
     public GameObject deathUI;
     
     void Start() {
@@ -62,6 +61,11 @@ public class GameHandler:MonoBehaviour
 
         // Load the current scene by its name, effectively reloading it
         SceneManager.LoadScene(currentSceneName);
+
+        // Time.timeScale = 1f;
+        // GameHandler_PauseMenu.GameisPaused = false;
+        // playerScore = levelScore;
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
