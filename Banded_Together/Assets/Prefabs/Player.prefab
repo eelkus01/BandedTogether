@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7110216910592537801}
   - component: {fileID: 2908412271888037129}
   - component: {fileID: 201703741504082187}
+  - component: {fileID: 4879678539722094813}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -140,6 +141,9 @@ MonoBehaviour:
   startSpeed: 10
   isAlive: 1
   doubleTapTimeThreshold: 0.5
+  dashingPower: 24
+  dashingTime: 0.1
+  dashingCooldown: 1
 --- !u!114 &201703741504082187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +156,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656ba95765669473e99cf24c8edcc818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellblastPrefab: {fileID: 67549156384315453, guid: 3aa563fc6af39401cbadcd841c2eb9f5, type: 3}
-  cooldownDuration: 0.5
+  attackPrefabs: []
+  cooldownDurations:
+  - 0.5
+  - 2
+  - 4
+  gameHandler: {fileID: 0}
+--- !u!114 &4879678539722094813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6894511932609115104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70eb462b4d4744eaf8ba5f460bc52086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currHealth: 20
+  healthBar: {fileID: 0}
+  gameHandler: {fileID: 0}
 --- !u!1 &9015675988966217860
 GameObject:
   m_ObjectHideFlags: 0

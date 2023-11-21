@@ -128,6 +128,7 @@ public class Enemy : MonoBehaviour
         }
         currentHealth -= damage;
         if (currentHealth <= 0) {
+            GameObject.Find("Player").GetComponent<PlayerStateManager>().getHealed(startHealth);
             KillEnemy();
         }
     }

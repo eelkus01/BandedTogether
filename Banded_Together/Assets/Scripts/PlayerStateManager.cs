@@ -27,4 +27,9 @@ public class PlayerStateManager : MonoBehaviour
         }
     }
 
+    public void getHealed(int healAmount) {
+        currHealth = Mathf.Min(healAmount+currHealth, maxHealth);
+        healthBar.GetComponent<HealthBar>().UpdateHealthBar(currHealth, maxHealth);
+    }
+
 }
