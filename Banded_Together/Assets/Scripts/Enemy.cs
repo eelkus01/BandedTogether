@@ -12,6 +12,10 @@ public class Enemy : MonoBehaviour
     public bool alive = true;
 
     public int currentHealth;
+
+    public int damage = 5;
+
+    public float knockbackDuration = .25f;
     private Rigidbody2D rb2D;
 
 
@@ -23,6 +27,8 @@ public class Enemy : MonoBehaviour
     private Renderer rend;
     private float flashTimer = 0f;
     private bool isFlashing = false;
+
+    private bool isKnockedBack = false;
     
 
     private void Start()
@@ -46,20 +52,13 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        // Check if the target exists.
-        if (target != null)
-        {
-            // Calculate the direction from the enemy to the target.
-            Vector2 moveDirection = (target.position - transform.position).normalized;
+        if (!isKnockedBack)
+    {
+        Vector2 moveDirection = (target.position - transform.position).normalized;
 
             // Update the enemy's Rigidbody2D velocity to move toward the target.
-            rb2D.velocity = moveDirection * moveSpeed;
-        }
-        else
-        {
-            // If the target is null (e.g., player is dead), stop moving.
-            rb2D.velocity = Vector2.zero;
-        }
+        rb2D.velocity = moveDirection * moveSpeed;
+    }
 
         // Check if the enemy is currently flashing.
         if (isFlashing)
@@ -73,17 +72,49 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+    // for collisions with attacks
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Spellblast"))
         {
             DamageEnemy(1);
+
+            Vector2 forceDirection = (transform.position - other.transform.position).normalized;
+            int knockback = other.GetComponent<Spellblast>().knockback;
+            ApplyKnockback(forceDirection * knockback);
+
             Destroy(other.gameObject);
         }
         if (other.CompareTag("DrumAttack"))
         {
             DamageEnemy(2);
+        }
+    }
+
+    private void ApplyKnockback(Vector2 force)
+    {
+        isKnockedBack = true;
+        rb2D.AddForce(force, ForceMode2D.Impulse);
+        StartCoroutine(ResetKnockback());
+    }
+
+    private IEnumerator ResetKnockback()
+    {
+        yield return new WaitForSeconds(knockbackDuration);
+        isKnockedBack = false;
+        rb2D.velocity = Vector2.zero; // Optional: reset velocity after knockback
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Assuming the Player object has a script with a GetDamaged method
+            collision.gameObject.GetComponent<PlayerStateManager>().getDamaged(damage);
+
+            // Destroy this object
+            Destroy(gameObject);
         }
     }
 

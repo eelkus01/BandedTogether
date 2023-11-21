@@ -7,6 +7,8 @@ public class Spellblast : MonoBehaviour
     public Transform target;          // The target to follow (usually the closest enemy).
     public float moveSpeed = 3f;     // The speed at which the enemy follows the target.
 
+    public int knockback = 10;
+
     private Rigidbody2D rb2D;        // Reference to the enemy's Rigidbody2D component.
 
     private void Start()
