@@ -84,7 +84,6 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("DrumAttack"))
         {
             DamageEnemy(2);
-            Destroy(other.gameObject);
         }
     }
 
