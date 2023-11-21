@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PartsPickup : MonoBehaviour {
-    public NavHandler navHandlerObj;
+    public GameHandler gameHandlerObj;
     //public playerVFX playerPowerupVFX;
 
     void Start(){
-        navHandlerObj = GameObject.FindWithTag("NavHandler").GetComponent<NavHandler>();
+        gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
     }
 
@@ -16,7 +16,7 @@ public class PartsPickup : MonoBehaviour {
             GetComponent<Collider2D>().enabled = false;
             //GetComponent< AudioSource>().Play();
             StartCoroutine(DestroyThis());
-            navHandlerObj.AddParts();
+            gameHandlerObj.AddParts();
         }
     }
 

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class DoorExit : MonoBehaviour{
     // NOTE: This script depends on the GameHandler having a public int "thePieces"
     // that is updated with each pickup collected.
-    public NavHandler navHandler;
+    public GameHandler gameHandler;
     public string NextLevel = "MainMenu";
     public GameObject exitClosed;
     public GameObject exitOpen;
@@ -14,15 +14,15 @@ public class DoorExit : MonoBehaviour{
     public int piecesNeeded = 0;
 
     void Start(){
-        navHandler = GameObject.FindWithTag("NavHandler").GetComponent<NavHandler>();
+        gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         exitClosed.SetActive(true);
         exitOpen.SetActive(false);
         gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
     void Update(){
-        piecesCollected = navHandler.partsGotten;
-        piecesNeeded = navHandler.partsNeeded;
+        piecesCollected = gameHandler.partsGotten;
+        piecesNeeded = gameHandler.partsNeeded;
         if (piecesCollected >= piecesNeeded){
             exitClosed.SetActive(false);
             exitOpen.SetActive(true);

@@ -62,11 +62,6 @@ public class pauseHandler : MonoBehaviour
 
     public void Exit()
     {
-        // Application.Quit();
-        // Time.timeScale = 1f;
-        // pauseMenuUI.SetActive(false);
-        // GameisPaused = false;
-
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #else

@@ -1,16 +1,24 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameHandler:MonoBehaviour
-{
+public class GameHandler : MonoBehaviour {
+
+    private GameObject player;
+    private string sceneName;
+    public GameObject partsText;
+    public int partsGotten = 0;
+    public int partsNeeded = 0;
     public List<InstrumentIndicator> instrumentIndicators;
-    public int activeInstrumentID = 1;
+    public int activeInstrumentID;
     public GameObject deathUI;
-    
-    void Start() {
+
+    void Start(){
+        UpdateParts();
+        player = GameObject.FindWithTag("Player");
         GameObject deathUI = GameObject.Find("DeadCanvas");
         deathUI.SetActive(false);
 
@@ -24,12 +32,29 @@ public class GameHandler:MonoBehaviour
             }
         }
     }
-    
-    void Update() {
+
+    void Update(){
         CheckForKeyPress();
     }
 
-    private void CheckForKeyPress() {
+    public void AddParts(){
+        partsGotten += 1;
+        UpdateParts();
+    }
+
+    void UpdateParts(){
+        Text partsTextB = partsText.GetComponent<Text>();
+        partsTextB.text = "Parts Obtained: " + partsGotten + "/" + partsNeeded;
+    }
+
+    public void StartGame(){
+        // Time.timeScale = 1f;
+        // GameHandler_PauseMenu.GameisPaused = false;
+        // partsGotten = 0;
+        // SceneManager.LoadScene("Mailroom");
+    }
+
+    private void CheckForKeyPress(){
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
             UpdateSelectedInstrument(1);
         }
@@ -41,7 +66,7 @@ public class GameHandler:MonoBehaviour
         }
     }
 
-    private void UpdateSelectedInstrument(int selectedInstrumentID) {
+    private void UpdateSelectedInstrument(int selectedInstrumentID){
         activeInstrumentID = selectedInstrumentID;
         foreach (var indicator in instrumentIndicators) {
             indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
@@ -54,18 +79,37 @@ public class GameHandler:MonoBehaviour
         Time.timeScale = 0f;
     }
 
-    public void ReloadLevel(){
+    public void ReplayLevel(){
         Debug.Log("This is getting called");
-        // Get the name of the currently active scene
-        string currentSceneName = SceneManager.GetActiveScene().name;
+        // // Get the name of the currently active scene
+        // string currentSceneName = SceneManager.GetActiveScene().name;
 
-        // Load the current scene by its name, effectively reloading it
-        SceneManager.LoadScene(currentSceneName);
+        // // Load the current scene by its name, effectively reloading it
+        // SceneManager.LoadScene(currentSceneName);
 
-        // Time.timeScale = 1f;
+        Time.timeScale = 1f;
         // GameHandler_PauseMenu.GameisPaused = false;
-        // playerScore = levelScore;
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        partsGotten = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void QuitGame(){
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
+    }
+
+    public void Credits(){
+        //SceneManager.LoadScene("CreditScene");
+    }
+
+    public void MainMenu(){
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void EndScene(){
+        //SceneManager.LoadScene("EndScene");
+    }
 }

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6767994426021852639
 MonoBehaviour:
@@ -41,7 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6442961199529897319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9024672c697744b80ab7823de8169664, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b4c5019960bd471dbf169aa3bc1261f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   instrumentIndicators: []
+  activeInstrumentID: 0
+  deathUI: {fileID: 0}
