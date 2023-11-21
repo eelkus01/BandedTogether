@@ -81,12 +81,6 @@ public class GameHandler : MonoBehaviour {
 
     public void ReplayLevel(){
         Debug.Log("This is getting called");
-        // // Get the name of the currently active scene
-        // string currentSceneName = SceneManager.GetActiveScene().name;
-
-        // // Load the current scene by its name, effectively reloading it
-        // SceneManager.LoadScene(currentSceneName);
-
         Time.timeScale = 1f;
         // GameHandler_PauseMenu.GameisPaused = false;
         partsGotten = 0;
