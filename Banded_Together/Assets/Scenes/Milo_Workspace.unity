@@ -22958,6 +22958,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2908412271888037129, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+      propertyPath: dashingTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908412271888037129, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+      propertyPath: dashingPower
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908412271888037129, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
+      propertyPath: dashingCooldown
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6894511932609115104, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_Name
       value: Player

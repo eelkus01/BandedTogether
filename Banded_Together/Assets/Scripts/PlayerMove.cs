@@ -21,9 +21,9 @@ public class PlayerMoveAround : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing;
-    private float dashingPower = 24f;
-    private float dashingTime = 0.1f;
-    private float dashingCooldown = 1f;
+    public float dashingPower = 24f;
+    public float dashingTime = 0.1f;
+    public float dashingCooldown = 1f;
 
     void Start()
     {
@@ -129,40 +129,46 @@ public class PlayerMoveAround : MonoBehaviour
     }
 
     private IEnumerator Dash(int direction)
+{
+    canDash = false;
+    isDashing = true;
+
+    // Store the original velocity
+    Vector2 originalVelocity = rb2D.velocity;
+    
+    // Calculate the dash direction
+    Vector2 dashDirection = Vector2.zero;
+    switch (direction)
     {
-        canDash = false;
-        isDashing = true;
-
-        //rb2D.velocity = new Vector2(transform.localScale.y * dashingPower, 0f);
-        //Vector3 hvMove = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
-        //transform.position = transform.position + hvMove * dashingPower * dashingTime;
-        Vector2 velocity = rb2D.velocity;
-        switch (direction)
-        {
-            case 1:
-                //rb2D.velocity = new Vector2(-rb2D.velocity.x * dashingPower, 0f);
-                rb2D.velocity = new Vector2(-transform.localScale.x * dashingPower, 0f);
-                break;
-            case 2:
-                //rb2D.velocity = new Vector2(rb2D.velocity.x * dashingPower, 0f);
-                rb2D.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-                break;
-            case 3:
-                //rb2D.velocity = new Vector2(rb2D.velocity.y * dashingPower, 0f);
-                rb2D.velocity = new Vector3(transform.localScale.x, transform.localScale.y * dashingPower, 0f);
-                break;
-            case 4:
-                //rb2D.velocity = new Vector2(-rb2D.velocity.y * dashingPower, 0f);
-                rb2D.velocity = new Vector3(transform.localScale.x, -transform.localScale.y * dashingPower, 0f);
-                break;
-        }
-
-
-
-
-        yield return new WaitForSeconds(dashingTime);
-        isDashing = false;
-        yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;
+        case 1: // Left
+            dashDirection = Vector2.left;
+            break;
+        case 2: // Right
+            dashDirection = Vector2.right;
+            break;
+        case 3: // Up
+            dashDirection = Vector2.up;
+            break;
+        case 4: // Down
+            dashDirection = Vector2.down;
+            break;
     }
+
+    // Apply an immediate force for the dash
+    rb2D.velocity = dashDirection * dashingPower;
+
+    // Dash duration
+    yield return new WaitForSeconds(dashingTime);
+
+    // Restore the original velocity
+    rb2D.velocity = originalVelocity;
+
+    isDashing = false;
+
+    // Cooldown period after dashing
+    yield return new WaitForSeconds(dashingCooldown);
+    canDash = true;
+}
+
+
 }
