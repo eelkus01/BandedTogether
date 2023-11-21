@@ -14,6 +14,7 @@ TagManager:
   - InstrumentIndicator
   - InstrumentBorder
   - InstArt
+  - DrumAttack
   layers:
   - Default
   - TransparentFX

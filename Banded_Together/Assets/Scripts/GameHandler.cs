@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameHandler:MonoBehaviour
 {
     public List<InstrumentIndicator> instrumentIndicators;
-    private int activeInstrumentID;
+    public int activeInstrumentID;
     
     void Start() {
         GameObject[] instrumentIndicatorObjects = GameObject.FindGameObjectsWithTag("InstrumentIndicator");

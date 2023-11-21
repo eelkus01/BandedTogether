@@ -11,6 +11,8 @@ public class Spellblast : MonoBehaviour
 
     private void Start()
     {
+        Destroy(gameObject, 2f);
+
         rb2D = GetComponent<Rigidbody2D>();
 
         // Find all GameObjects with the tag "Enemy."
