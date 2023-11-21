@@ -14661,6 +14661,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4997779749603982642, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
+      propertyPath: m_Name
+      value: ButtonRetry
+      objectReference: {fileID: 0}
     - target: {fileID: 7293784691894378749, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
       propertyPath: m_SortingOrder
       value: 1000
@@ -22005,8 +22009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213f03f28be9a48838510110c8df154c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuUI: {fileID: 1336121419}
   tw: {fileID: 498721802}
+  pauseMenuUI: {fileID: 1336121419}
 --- !u!4 &1601337891
 Transform:
   m_ObjectHideFlags: 0
@@ -22726,6 +22730,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1601337890}
+    - target: {fileID: 4591320792078413569, guid: 5710a8cc7dfd440b9a27ad77bf44a6b5, type: 3}
+      propertyPath: m_Name
+      value: ButtonQuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5417348055867593271, guid: 5710a8cc7dfd440b9a27ad77bf44a6b5, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8013959420353240370, guid: 5710a8cc7dfd440b9a27ad77bf44a6b5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -22813,6 +22825,10 @@ PrefabInstance:
     - target: {fileID: 8674821410417090907, guid: 5710a8cc7dfd440b9a27ad77bf44a6b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107581468620661242, guid: 5710a8cc7dfd440b9a27ad77bf44a6b5, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

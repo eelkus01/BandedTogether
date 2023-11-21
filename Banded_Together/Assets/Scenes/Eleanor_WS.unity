@@ -241,7 +241,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -338,7 +338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.53, y: 7.07}
+  m_AnchoredPosition: {x: 34.85, y: 7.07}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &223357261
@@ -487,6 +487,10 @@ PrefabInstance:
     - target: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
       propertyPath: m_TagString
@@ -14033,6 +14037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioSources
       objectReference: {fileID: 0}
+    - target: {fileID: 6187992813660806038, guid: e4758f3d31d674d8e91e744d61d36b06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9000630839159940683, guid: e4758f3d31d674d8e91e744d61d36b06, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -14452,6 +14460,10 @@ PrefabInstance:
       value: Enemy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -14644,7 +14656,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -14755,6 +14767,10 @@ PrefabInstance:
     - target: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
       propertyPath: m_TagString
@@ -22678,7 +22694,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -22898,6 +22914,10 @@ PrefabInstance:
     - target: {fileID: 6442961199529897319, guid: 42e72af0882e443ad9be08fc7c92c532, type: 3}
       propertyPath: m_Name
       value: GameHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442961199529897319, guid: 42e72af0882e443ad9be08fc7c92c532, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

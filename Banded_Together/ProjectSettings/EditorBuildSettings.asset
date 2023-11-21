@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Jacob_DDR.unity
     guid: 32ed43e5a74a847e8a7fe3ccb6501dcf
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 62a1a524a62e04edd834314cad90a292
   m_configObjects: {}
