@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameHandler:MonoBehaviour
 {
     public List<InstrumentIndicator> instrumentIndicators;
-    public int activeInstrumentID;
+    public int activeInstrumentID = 1;
     public GameObject deathUI;
     
     void Start() {
