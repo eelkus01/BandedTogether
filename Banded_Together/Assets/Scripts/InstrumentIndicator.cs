@@ -25,7 +25,6 @@ public class InstrumentIndicator : MonoBehaviour
     }
 
     public void SetSelectedState(bool selected) {
-        Debug.Log("Instrument with ID "+instrumentID+" instrument ");
         isSelected = selected;
         UpdateAppearanceOnSelectAction();
     }

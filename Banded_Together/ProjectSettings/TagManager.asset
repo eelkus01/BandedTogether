@@ -15,6 +15,7 @@ TagManager:
   - InstrumentBorder
   - InstArt
   - DrumAttack
+  - HealthBar
   layers:
   - Default
   - TransparentFX
