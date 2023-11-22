@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7110216910592537801}
   - component: {fileID: 2908412271888037129}
   - component: {fileID: 201703741504082187}
-  - component: {fileID: 4879678539722094813}
+  - component: {fileID: 6824744760783391070}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 6781709548342564340}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7434801921183184686
 BoxCollider2D:
@@ -141,9 +141,9 @@ MonoBehaviour:
   startSpeed: 10
   isAlive: 1
   doubleTapTimeThreshold: 0.5
-  dashingPower: 24
+  dashingPower: 40
   dashingTime: 0.1
-  dashingCooldown: 1
+  dashingCooldown: 0.3
 --- !u!114 &201703741504082187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,13 +156,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656ba95765669473e99cf24c8edcc818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPrefabs: []
+  attackPrefabs:
+  - {fileID: 67549156384315453, guid: 3aa563fc6af39401cbadcd841c2eb9f5, type: 3}
+  - {fileID: 3448854756909606908, guid: dc69f308cc1b149048e13e69c128139d, type: 3}
+  - {fileID: 0}
   cooldownDurations:
   - 0.5
   - 2
   - 4
   gameHandler: {fileID: 0}
---- !u!114 &4879678539722094813
+--- !u!114 &6824744760783391070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

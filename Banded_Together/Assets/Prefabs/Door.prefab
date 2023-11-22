@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9870957, g: 1, b: 0.25, a: 1}
   m_FlipX: 0
@@ -156,9 +156,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.31481257, g: 0.7169812, b: 0.20630117, a: 1}
+  m_Color: {r: 0.9150943, g: 0.16834284, b: 0.20643972, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -201,7 +201,7 @@ Transform:
   - {fileID: 7743434291431589888}
   - {fileID: 8963182714640550732}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5087083960864858429
 BoxCollider2D:
@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02ddddf681364cba91e07e6b6bcd48b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navHandler: {fileID: 0}
-  NextLevel: Jacob_DDR
+  gameHandler: {fileID: 0}
+  NextLevel: MainMenu
   exitClosed: {fileID: 5543827268545702766}
   exitOpen: {fileID: 1342057777819965828}
   piecesCollected: 0

@@ -19,7 +19,7 @@ public class StartHandler : MonoBehaviour
 
     public void startGame(){
         Debug.Log("Trying to load screen");
-        SceneManager.LoadScene("Eleanor_Workspace");
+        SceneManager.LoadScene("Milo_Workspace");
     }
 
 
