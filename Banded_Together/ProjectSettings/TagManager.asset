@@ -16,6 +16,7 @@ TagManager:
   - InstArt
   - DrumAttack
   - HealthBar
+  - PartPickupOutline
   layers:
   - Default
   - TransparentFX
