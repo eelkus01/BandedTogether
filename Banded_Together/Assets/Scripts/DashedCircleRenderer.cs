@@ -4,26 +4,21 @@ using UnityEngine;
 
 public class DashedCircleRenderer : MonoBehaviour
 {
-    public int dashCount = 36; // Number of dashes
-    public float radius = 2f;  // Radius of the circle
+    public float radius = 5f; // Adjust the radius as needed
+    public int pointCount = 36;
 
     void Start()
     {
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.positionCount = dashCount * 2;
+        lineRenderer.positionCount = pointCount;
 
-        float deltaTheta = (2f * Mathf.PI) / dashCount;
-        float theta = 0f;
-
-        for (int i = 0; i < dashCount * 2; i += 2)
+        for (int i = 0; i < pointCount + 10; i++)
         {
-            float x = radius * Mathf.Cos(theta);
-            float y = radius * Mathf.Sin(theta);
+            float theta = (2f * Mathf.PI * i) / pointCount;
+            float x = 0 + radius * Mathf.Cos(theta);
+            float y = 0 + radius * Mathf.Sin(theta);
 
             lineRenderer.SetPosition(i, new Vector3(x, y, 0f));
-            lineRenderer.SetPosition(i + 1, new Vector3(x, y, 0f));
-
-            theta += deltaTheta;
         }
     }
 }
