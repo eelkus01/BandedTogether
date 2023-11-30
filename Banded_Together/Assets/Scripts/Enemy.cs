@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
 
     public int damage = 5;
 
+    public int knockback = 10;
+
     public float knockbackDuration = .25f;
     private Rigidbody2D rb2D;
 
@@ -112,6 +114,10 @@ public class Enemy : MonoBehaviour
         {
             // Assuming the Player object has a script with a GetDamaged method
             collision.gameObject.GetComponent<PlayerStateManager>().getDamaged(damage);
+
+            // Knock back the player
+            Vector2 forceDirection = (collision.transform.position - transform.position).normalized;
+            collision.gameObject.GetComponent<PlayerMoveAround>().getKnockedBack(forceDirection, knockback);
 
             // Destroy this object
             Destroy(gameObject);

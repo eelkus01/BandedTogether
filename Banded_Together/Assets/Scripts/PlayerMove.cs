@@ -25,6 +25,9 @@ public class PlayerMoveAround : MonoBehaviour
     public float dashingTime = 0.1f;
     public float dashingCooldown = 1f;
 
+    private bool isKnockedBack = false;
+    public float knockbackDuration = .25f;
+
     void Start()
     {
         //anim = gameObject.GetComponentInChildren<Animator>();
@@ -168,7 +171,24 @@ public class PlayerMoveAround : MonoBehaviour
     // Cooldown period after dashing
     yield return new WaitForSeconds(dashingCooldown);
     canDash = true;
-}
+    }
 
+    public void getKnockedBack(Vector2 forceDirection, int knockback)
+    {
+        ApplyKnockback(forceDirection * knockback);
+    }
+    private void ApplyKnockback(Vector2 force)
+    {
+        isKnockedBack = true;
+        rb2D.AddForce(force, ForceMode2D.Impulse);
+        StartCoroutine(ResetKnockback());
+    }
+
+    private IEnumerator ResetKnockback()
+    {
+        yield return new WaitForSeconds(knockbackDuration);
+        isKnockedBack = false;
+        rb2D.velocity = Vector2.zero; 
+    }
 
 }
