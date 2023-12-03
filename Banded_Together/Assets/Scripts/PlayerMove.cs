@@ -107,7 +107,6 @@ public class PlayerMoveAround : MonoBehaviour
             //     playerTurn();
             // }
         }
-        clampPlayerMovement();
     }
 
     private void playerTurn()
@@ -120,17 +119,7 @@ public class PlayerMoveAround : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-
-    //keep player within campera bounds
-    //REMOVE IF NOT NEEDED
-    void clampPlayerMovement()
-    {
-        Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-        pos.x = Mathf.Clamp01(pos.x);
-        pos.y = Mathf.Clamp01(pos.y);
-        transform.position = Camera.main.ViewportToWorldPoint(pos);
-    }
-
+    
     private IEnumerator Dash(int direction)
 {
     canDash = false;
