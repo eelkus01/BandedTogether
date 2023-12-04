@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public float activationDistance = 10f; // Distance from player under which will start spawning enemies.
     private bool isActive = false; // Will only spawn enemy instances when active.
     private GameObject inactiveArt;
-    private GameObject activeArt;
+    private GameObject activeArt; // touch
 
     private void Start()
     {
