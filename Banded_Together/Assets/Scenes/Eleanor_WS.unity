@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
   spawnInterval: 12
+  activationDistance: 10
 --- !u!4 &45357648
 Transform:
   m_ObjectHideFlags: 0
@@ -14856,6 +14857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
   spawnInterval: 12
+  activationDistance: 10
 --- !u!4 &736847576
 Transform:
   m_ObjectHideFlags: 0
@@ -15214,6 +15216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
   spawnInterval: 12
+  activationDistance: 10
 --- !u!4 &1185348736
 Transform:
   m_ObjectHideFlags: 0
@@ -22579,8 +22582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213f03f28be9a48838510110c8df154c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuUI: {fileID: 1336121419}
   tw: {fileID: 498721802}
+  pauseMenuUI: {fileID: 0}
 --- !u!4 &1601337891
 Transform:
   m_ObjectHideFlags: 0
@@ -22811,8 +22814,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656ba95765669473e99cf24c8edcc818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellblastPrefab: {fileID: 67549156384315453, guid: 3aa563fc6af39401cbadcd841c2eb9f5, type: 3}
-  cooldownDuration: 0.5
+  attackPrefabs: []
+  cooldownDurations:
+  - 0.5
+  - 2
+  - 4
+  gameHandler: {fileID: 0}
 --- !u!1 &1975454921
 GameObject:
   m_ObjectHideFlags: 0
@@ -22844,6 +22851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
   spawnInterval: 12
+  activationDistance: 10
 --- !u!4 &1975454923
 Transform:
   m_ObjectHideFlags: 0

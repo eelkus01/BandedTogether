@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public Animator anim;
     public Transform target;          // The target to follow (usually the player).
     public float moveSpeed = 3f;     // The speed at which the enemy follows the target.
 
@@ -135,12 +136,14 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0) {
             GameObject.Find("Player").GetComponent<PlayerStateManager>().getHealed(startHealth);
-            KillEnemy();
+            StartCoroutine(KillEnemy());
         }
     }
 
-    public void KillEnemy(){
+    public IEnumerator KillEnemy(){
         if (alive){
+            anim.Play("Explode");
+            yield return new WaitForSeconds(1f);
             alive = false;
             Destroy(gameObject);
         }
