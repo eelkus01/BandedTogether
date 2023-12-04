@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PartsPickup : MonoBehaviour {
     public GameHandler gameHandlerObj;
+    public Image part;
     //public playerVFX playerPowerupVFX;
 
     void Start(){
         gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+        part.gameObject.SetActive(false);
         //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
     }
 
@@ -17,6 +20,7 @@ public class PartsPickup : MonoBehaviour {
             //GetComponent< AudioSource>().Play();
             StartCoroutine(DestroyThis());
             gameHandlerObj.AddParts();
+            part.gameObject.SetActive(true);
         }
     }
 
