@@ -22541,18 +22541,6 @@ PrefabInstance:
       propertyPath: gameHandler
       value: 
       objectReference: {fileID: 1920945886}
-    - target: {fileID: 201703741504082187, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: attackPrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 201703741504082187, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: attackPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 67549156384315453, guid: 3aa563fc6af39401cbadcd841c2eb9f5, type: 3}
-    - target: {fileID: 201703741504082187, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: attackPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 3448854756909606908, guid: dc69f308cc1b149048e13e69c128139d, type: 3}
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -22596,38 +22584,6 @@ PrefabInstance:
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908412271888037129, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: dashingPower
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2908412271888037129, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: dashingCooldown
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4299500445195818665, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1280888675, guid: 3d2db2781eac74f8bacb4b5fe78ab55e, type: 3}
-    - target: {fileID: 6781709548342564340, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6781709548342564340, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6781709548342564340, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6781709548342564340, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 6781709548342564340, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6824744760783391070, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: healthBar

@@ -144,6 +144,7 @@ MonoBehaviour:
   dashingPower: 40
   dashingTime: 0.1
   dashingCooldown: 0.3
+  knockbackDuration: 0.25
 --- !u!114 &201703741504082187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,9 +208,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9015675988966217860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: -0.24, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1324641599730154467}
   m_RootOrder: -1
@@ -255,7 +256,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: -316769812, guid: 9e12909829c4745cdae39c9da96a470d, type: 3}
+  m_Sprite: {fileID: -1280888675, guid: 3d2db2781eac74f8bacb4b5fe78ab55e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
