@@ -12,10 +12,22 @@ public class PlayerAnimation : MonoBehaviour
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
-        if (x != 0 || y != 0) {
-            anim.SetFloat("X", x);
-            anim.SetFloat("Y", y);
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("PlayerHurt"))
+        {
+            if (x != 0 || y != 0) 
+            {
+                anim.SetFloat("X", x);
+                anim.SetFloat("Y", y);
+            }
+        }
+        else{
+            Debug.Log("Skipped because Player Animation was playing.");
         }
         
+    }
+
+    public void triggerHurtAnimation(){
+        Debug.Log("This is getting called correctly.");
+        anim.SetTrigger("Hurt");
     }
 }
