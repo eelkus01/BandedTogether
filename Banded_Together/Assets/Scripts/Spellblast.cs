@@ -11,11 +11,15 @@ public class Spellblast : MonoBehaviour
 
     private Rigidbody2D rb2D;        // Reference to the enemy's Rigidbody2D component.
 
+    //sound for spell blast
+    private AudioSource source;
+
     private void Start()
     {
         Destroy(gameObject, 2f);
 
         rb2D = GetComponent<Rigidbody2D>();
+        source = GetComponentInChildren<AudioSource>();
 
         // Find all GameObjects with the tag "Enemy."
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -44,6 +48,9 @@ public class Spellblast : MonoBehaviour
 
     private void Update()
     {
+        //play sound of blast
+        source.GetComponent<RandomSound>().PlaySound();
+
         // Check if the target exists.
         if (target != null)
         {
