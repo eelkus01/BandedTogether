@@ -20,6 +20,8 @@ public class ObstacleHandler : MonoBehaviour
     {
         if (other.CompareTag("Spellblast"))
         {
+            //add particle effect and then destroy
+            other.GetComponent<ImpactParticles>().CreateParticles();
             Destroy(other.gameObject);
         }
     }

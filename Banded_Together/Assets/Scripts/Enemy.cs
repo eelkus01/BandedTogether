@@ -87,6 +87,8 @@ public class Enemy : MonoBehaviour
             int knockback = other.GetComponent<Spellblast>().knockback;
             ApplyKnockback(forceDirection * knockback);
 
+            //add particle effect before destroying
+            other.GetComponent<ImpactParticles>().CreateParticles();
             Destroy(other.gameObject);
         }
         if (other.CompareTag("DrumAttack"))

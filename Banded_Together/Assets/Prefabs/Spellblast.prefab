@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1311480544998450682}
   - component: {fileID: 1487673698973716784}
   - component: {fileID: -6674350457024240990}
+  - component: {fileID: 4169438490526219430}
   m_Layer: 0
   m_Name: Spellblast
   m_TagString: Spellblast
@@ -174,3 +175,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4169438490526219430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67549156384315453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561ea17ce8d834b57b64cd6948bee579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitParticles: {fileID: 8319426688911545330, guid: f7df02716b399414c81cb9b1928d5f01, type: 3}
+  spwnPoint: {x: 0, y: 0, z: 0}
