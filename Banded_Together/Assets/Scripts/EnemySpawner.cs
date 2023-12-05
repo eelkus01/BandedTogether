@@ -49,7 +49,6 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemyAtIntervals(float interval)
     {
-        Instantiate(enemyPrefab, transform.position, transform.rotation);
         while (true) // Infinite loop to keep spawning enemies
         {
             yield return new WaitForSeconds(interval); // Wait for the specified interval
