@@ -17,7 +17,7 @@ public class PartsPickup : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.tag == "Player"){
             GetComponent<Collider2D>().enabled = false;
-            //GetComponent< AudioSource>().Play();
+            //GetComponent<AudioSource>().Play();
             StartCoroutine(DestroyThis());
             gameHandlerObj.AddParts();
             part.gameObject.SetActive(true);

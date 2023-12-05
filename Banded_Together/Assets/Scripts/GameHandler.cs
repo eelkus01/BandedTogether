@@ -25,6 +25,8 @@ public class GameHandler : MonoBehaviour {
         GameObject[] instrumentIndicatorObjects = GameObject.FindGameObjectsWithTag("InstrumentIndicator");
         instrumentIndicators = new List<InstrumentIndicator>();
 
+        //restrict this to only show instrument 1 at start of level 1
+        //and instruments 1 and 2 at start of level 2
         foreach (var obj in instrumentIndicatorObjects) {
             InstrumentIndicator indicator = obj.GetComponent<InstrumentIndicator>();
             if (indicator != null) {
@@ -45,6 +47,10 @@ public class GameHandler : MonoBehaviour {
     void UpdateParts(){
         Text partsTextB = partsText.GetComponent<Text>();
         partsTextB.text = "Parts Obtained: " + partsGotten + "/" + partsNeeded;
+        //check if full instrument is gained
+        if (partsGotten = partsNeeded){
+            GainInstrument();
+        }
     }
 
     public void StartGame(){
@@ -64,6 +70,11 @@ public class GameHandler : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.Alpha3)) {
             UpdateSelectedInstrument(3);
         }
+    }
+
+    //function to made instrument visible only once parts are collected
+    private void GainInstrument(){
+        //made new instrument visible
     }
 
     private void UpdateSelectedInstrument(int selectedInstrumentID){
