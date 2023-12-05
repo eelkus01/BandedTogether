@@ -16,6 +16,8 @@ public class GameHandler : MonoBehaviour {
     public int activeInstrumentID;
     public GameObject deathUI;
 
+    public bool hasAllParts = false;
+
     void Start(){
         UpdateParts();
         player = GameObject.FindWithTag("Player");
@@ -75,7 +77,9 @@ public class GameHandler : MonoBehaviour {
     //function to made instrument visible only once parts are collected
     private void GainInstrument(){
         //made new instrument visible
-        Debug.Log("Instrument Gained");
+        hasAllParts = true;
+        GameObject door = GameObject.Find("NewDoor");
+        Destroy(door);
     }
 
     private void UpdateSelectedInstrument(int selectedInstrumentID){

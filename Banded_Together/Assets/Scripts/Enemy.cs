@@ -55,6 +55,10 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if(!alive){
+            rb2D.velocity = Vector3.zero;
+            return;
+        }
         if (!isKnockedBack)
     {
         Vector2 moveDirection = (target.position - transform.position).normalized;
@@ -145,8 +149,8 @@ public class Enemy : MonoBehaviour
     public IEnumerator KillEnemy(){
         if (alive){
             anim.Play("Explode");
-            yield return new WaitForSeconds(1f);
             alive = false;
+            yield return new WaitForSeconds(1f);
             Destroy(gameObject);
         }
     }

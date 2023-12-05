@@ -104,8 +104,9 @@ public class Dragon : MonoBehaviour
     {
         if (other.CompareTag("Spellblast"))
         {
-            DamageEnemy(2);
-
+            if(!returning){
+                DamageEnemy(2);
+            }
             // Vector2 forceDirection = (transform.position - other.transform.position).normalized;
             // int knockback = other.GetComponent<Spellblast>().knockback;
             // ApplyKnockback(forceDirection * knockback);
