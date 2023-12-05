@@ -48,7 +48,7 @@ public class GameHandler : MonoBehaviour {
         Text partsTextB = partsText.GetComponent<Text>();
         partsTextB.text = "Parts Obtained: " + partsGotten + "/" + partsNeeded;
         //check if full instrument is gained
-        if (partsGotten = partsNeeded){
+        if (partsGotten == partsNeeded){
             GainInstrument();
         }
     }
@@ -75,6 +75,7 @@ public class GameHandler : MonoBehaviour {
     //function to made instrument visible only once parts are collected
     private void GainInstrument(){
         //made new instrument visible
+        Debug.Log("Instrument Gained");
     }
 
     private void UpdateSelectedInstrument(int selectedInstrumentID){
