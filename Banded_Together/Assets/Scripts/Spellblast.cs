@@ -44,13 +44,13 @@ public class Spellblast : MonoBehaviour
 
         // Set the closest enemy's transform as the target.
         target = closestEnemy;
+
+        //play sound of blast
+        source.GetComponent<RandomSound>().PlaySound();
     }
 
     private void Update()
     {
-        //play sound of blast
-        source.GetComponent<RandomSound>().PlaySound();
-
         // Check if the target exists.
         if (target != null)
         {
