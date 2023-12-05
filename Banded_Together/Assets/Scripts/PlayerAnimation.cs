@@ -20,9 +20,6 @@ public class PlayerAnimation : MonoBehaviour
                 anim.SetFloat("Y", y);
             }
         }
-        else{
-            Debug.Log("Skipped because Player Animation was playing.");
-        }
         
     }
 

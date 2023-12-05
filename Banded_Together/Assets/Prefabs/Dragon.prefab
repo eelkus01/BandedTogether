@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1893268546094066324}
   m_Layer: 0
   m_Name: Dragon
-  m_TagString: Untagged
+  m_TagString: Dragon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744860773943b472db1b58a7e9e50385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragonBallPrefab: {fileID: 6233705468327031707, guid: 4efa7f87f28424d8f841d4836507bc50, type: 3}
   phase: start
+  firePhase: start
   startHealth: 25
   angryHealth: 12
   weakHealth: 5

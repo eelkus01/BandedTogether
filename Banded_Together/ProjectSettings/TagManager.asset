@@ -17,6 +17,8 @@ TagManager:
   - DrumAttack
   - HealthBar
   - PartPickupOutline
+  - DragonBall
+  - Dragon
   layers:
   - Default
   - TransparentFX
