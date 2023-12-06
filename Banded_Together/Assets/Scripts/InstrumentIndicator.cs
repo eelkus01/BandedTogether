@@ -11,13 +11,10 @@ public class InstrumentIndicator : MonoBehaviour
     private Image childImage;
     public GameObject borderOn;
     public int instrumentID;
-    public GameHandler gameHandler;
-    public bool hasParts;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         childImage = GetComponentInChildren<Image>();
         originalColor = childImage.color;
         //make first instrument selected from start
@@ -26,13 +23,6 @@ public class InstrumentIndicator : MonoBehaviour
         } else {
             borderOn.SetActive(false);
         }
-        hasParts = gameHandler.hasAllParts;
-    }
-
-    void Update()
-    {
-        //keep checkig if player has all the parts
-        hasParts = gameHandler.hasAllParts;
     }
 
     public void SetSelectedState(bool selected) {
