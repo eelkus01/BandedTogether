@@ -10,7 +10,7 @@ public class Play : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Eleanor_Workspace");
+        SceneManager.LoadSceneAsync("DrumLevel");
 
     }
 

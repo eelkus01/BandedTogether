@@ -72,7 +72,7 @@ public class GameHandler : MonoBehaviour {
         // Time.timeScale = 1f;
         // GameHandler_PauseMenu.GameisPaused = false;
         // partsGotten = 0;
-        // SceneManager.LoadScene("Milo_Workspace");
+        // SceneManager.LoadScene("DrumLevel");
     }
 
     private void CheckForKeyPress(){
@@ -102,9 +102,30 @@ public class GameHandler : MonoBehaviour {
 
     private void UpdateSelectedInstrument(int selectedInstrumentID){
         activeInstrumentID = selectedInstrumentID;
-        foreach (var indicator in instrumentIndicators) {
-            indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
+
+        //check for all parts before allowing selection
+        if (!hasAllParts) {
+            if (SceneManager.GetActiveScene().name == "DrumLevel") {
+                //just allow singing
+                if (selectedInstrumentID == 1) {
+                    foreach (var indicator in instrumentIndicators) {
+                        indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
+                    }
+                } else {
+                    Debug.Log("Can't select instrument yet");
+                }
+            } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
+                //just allow singing and drum
+                if (selectedInstrumentID == 1 || selectedInstrumentID == 2) {
+                    
+                } else {
+                    Debug.Log("Can't select instrument yet");
+                }
+            }
         }
+        // foreach (var indicator in instrumentIndicators) {
+        //     indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
+        // }
     }
 
     public void handleDeath(){
