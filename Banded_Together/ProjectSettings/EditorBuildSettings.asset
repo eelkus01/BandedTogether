@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Jacob_WS.unity
     guid: 89e1cd1a5bac34510aae4be219c9fdc8
+  - enabled: 1
+    path: Assets/Scenes/DrumLevel.unity
+    guid: 0fc64fe87da5b49159ed4e15e2c21301
+  - enabled: 1
+    path: Assets/Scenes/PianoLevel.unity
+    guid: d7e1b774668414340a18dac956cf0ace
   m_configObjects: {}
