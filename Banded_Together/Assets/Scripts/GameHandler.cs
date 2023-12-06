@@ -15,7 +15,6 @@ public class GameHandler : MonoBehaviour {
     public List<InstrumentIndicator> instrumentIndicators;
     public int activeInstrumentID;
     public GameObject deathUI;
-
     public bool hasAllParts = false;
     public GameObject[] instrumentIndicatorObjects;
 
@@ -38,10 +37,17 @@ public class GameHandler : MonoBehaviour {
         }
 
         //make only 1st instrument visible to start
-        //(will need to change this for when level 2 is made)
-        instrumentIndicatorObjects[0].SetActive(true);
-        instrumentIndicatorObjects[1].SetActive(false);
-        instrumentIndicatorObjects[2].SetActive(false);
+        if (SceneManager.GetActiveScene().name == "DrumLevel") {
+            instrumentIndicatorObjects[0].SetActive(true);
+            instrumentIndicatorObjects[1].SetActive(false);
+            instrumentIndicatorObjects[2].SetActive(false);
+        } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
+            instrumentIndicatorObjects[0].SetActive(true);
+            instrumentIndicatorObjects[1].SetActive(true);
+            instrumentIndicatorObjects[2].SetActive(false);
+        }
+
+        //make only 1st attack available
     }
 
     void Update(){
@@ -85,9 +91,11 @@ public class GameHandler : MonoBehaviour {
     //also unlocks door to dragon room
     private void GainInstrument(){
         Debug.Log("Making new attack available");
-        //make new instrument visible
-        instrumentIndicatorObjects[1].SetActive(true);
         hasAllParts = true;
+        //make new instrument visible and attack available
+        instrumentIndicatorObjects[1].SetActive(true);
+
+        //open Dragon door
         GameObject door = GameObject.Find("NewDoor");
         Destroy(door);
     }
