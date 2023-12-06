@@ -61,7 +61,7 @@ public class PlayerMoveAround : MonoBehaviour
                 //     WalkSFX.Stop();
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && canDash)
+            if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && canDash)
             {
                 if (Time.time - llastTapTime < doubleTapTimeThreshold)
                 {
@@ -71,7 +71,7 @@ public class PlayerMoveAround : MonoBehaviour
 
                 llastTapTime = Time.time;
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow) && canDash)
+            if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && canDash)
             {
                 if (Time.time - rlastTapTime < doubleTapTimeThreshold)
                 {
@@ -81,7 +81,7 @@ public class PlayerMoveAround : MonoBehaviour
 
                 rlastTapTime = Time.time;
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow) && canDash)
+            if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && canDash)
             {
                 if (Time.time - ulastTapTime < doubleTapTimeThreshold)
                 {
@@ -91,7 +91,7 @@ public class PlayerMoveAround : MonoBehaviour
 
                 ulastTapTime = Time.time;
             }
-            if (Input.GetKeyDown(KeyCode.DownArrow) && canDash)
+            if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && canDash)
             {
                 if (Time.time - dlastTapTime < doubleTapTimeThreshold)
                 {
@@ -121,45 +121,45 @@ public class PlayerMoveAround : MonoBehaviour
     }
     
     private IEnumerator Dash(int direction)
-{
-    canDash = false;
-    isDashing = true;
-
-    // Store the original velocity
-    Vector2 originalVelocity = rb2D.velocity;
-    
-    // Calculate the dash direction
-    Vector2 dashDirection = Vector2.zero;
-    switch (direction)
     {
-        case 1: // Left
-            dashDirection = Vector2.left;
-            break;
-        case 2: // Right
-            dashDirection = Vector2.right;
-            break;
-        case 3: // Up
-            dashDirection = Vector2.up;
-            break;
-        case 4: // Down
-            dashDirection = Vector2.down;
-            break;
-    }
+        canDash = false;
+        isDashing = true;
 
-    // Apply an immediate force for the dash
-    rb2D.velocity = dashDirection * dashingPower;
+        // Store the original velocity
+        Vector2 originalVelocity = rb2D.velocity;
+        
+        // Calculate the dash direction
+        Vector2 dashDirection = Vector2.zero;
+        switch (direction)
+        {
+            case 1: // Left
+                dashDirection = Vector2.left;
+                break;
+            case 2: // Right
+                dashDirection = Vector2.right;
+                break;
+            case 3: // Up
+                dashDirection = Vector2.up;
+                break;
+            case 4: // Down
+                dashDirection = Vector2.down;
+                break;
+        }
 
-    // Dash duration
-    yield return new WaitForSeconds(dashingTime);
+        // Apply an immediate force for the dash
+        rb2D.velocity = dashDirection * dashingPower;
 
-    // Restore the original velocity
-    rb2D.velocity = originalVelocity;
+        // Dash duration
+        yield return new WaitForSeconds(dashingTime);
 
-    isDashing = false;
+        // Restore the original velocity
+        rb2D.velocity = originalVelocity;
 
-    // Cooldown period after dashing
-    yield return new WaitForSeconds(dashingCooldown);
-    canDash = true;
+        isDashing = false;
+
+        // Cooldown period after dashing
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
 
     public void getKnockedBack(Vector2 forceDirection, int knockback)
