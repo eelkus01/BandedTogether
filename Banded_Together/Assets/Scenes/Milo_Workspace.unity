@@ -57133,11 +57133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5509379412101431761, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7223517547594607833, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9211906706326570209, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_Name

@@ -17,6 +17,7 @@ public class GameHandler : MonoBehaviour {
     public GameObject deathUI;
 
     public bool hasAllParts = false;
+    public GameObject[] instrumentIndicatorObjects;
 
     void Start(){
         UpdateParts();
@@ -24,7 +25,7 @@ public class GameHandler : MonoBehaviour {
         GameObject deathUI = GameObject.Find("DeadCanvas");
         deathUI.SetActive(false);
 
-        GameObject[] instrumentIndicatorObjects = GameObject.FindGameObjectsWithTag("InstrumentIndicator");
+        instrumentIndicatorObjects = GameObject.FindGameObjectsWithTag("InstrumentIndicator");
         instrumentIndicators = new List<InstrumentIndicator>();
 
         //restrict this to only show instrument 1 at start of level 1
@@ -35,6 +36,12 @@ public class GameHandler : MonoBehaviour {
                 instrumentIndicators.Add(indicator);
             }
         }
+
+        //make only 1st instrument visible to start
+        //(will need to change this for when level 2 is made)
+        instrumentIndicatorObjects[0].SetActive(true);
+        instrumentIndicatorObjects[1].SetActive(false);
+        instrumentIndicatorObjects[2].SetActive(false);
     }
 
     void Update(){
@@ -75,8 +82,11 @@ public class GameHandler : MonoBehaviour {
     }
 
     //function to made instrument visible only once parts are collected
+    //also unlocks door to dragon room
     private void GainInstrument(){
-        //made new instrument visible
+        Debug.Log("Making new attack available");
+        //make new instrument visible
+        instrumentIndicatorObjects[1].SetActive(true);
         hasAllParts = true;
         GameObject door = GameObject.Find("NewDoor");
         Destroy(door);
