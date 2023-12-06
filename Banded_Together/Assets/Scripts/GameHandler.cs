@@ -124,10 +124,12 @@ public class GameHandler : MonoBehaviour {
                     Debug.Log("Can't select instrument yet");
                 }
             }
+        } else {
+            activeInstrumentID = selectedInstrumentID;
+            foreach (var indicator in instrumentIndicators) {
+                indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
+            }
         }
-        // foreach (var indicator in instrumentIndicators) {
-        //     indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
-        // }
     }
 
     public void handleDeath(){
