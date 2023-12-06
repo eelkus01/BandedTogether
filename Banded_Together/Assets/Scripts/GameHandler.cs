@@ -101,13 +101,12 @@ public class GameHandler : MonoBehaviour {
     }
 
     private void UpdateSelectedInstrument(int selectedInstrumentID){
-        activeInstrumentID = selectedInstrumentID;
-
         //check for all parts before allowing selection
         if (!hasAllParts) {
             if (SceneManager.GetActiveScene().name == "DrumLevel") {
                 //just allow singing
                 if (selectedInstrumentID == 1) {
+                    activeInstrumentID = selectedInstrumentID;
                     foreach (var indicator in instrumentIndicators) {
                         indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
                     }
@@ -117,7 +116,10 @@ public class GameHandler : MonoBehaviour {
             } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
                 //just allow singing and drum
                 if (selectedInstrumentID == 1 || selectedInstrumentID == 2) {
-                    
+                    activeInstrumentID = selectedInstrumentID;
+                    foreach (var indicator in instrumentIndicators) {
+                        indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
+                    }
                 } else {
                     Debug.Log("Can't select instrument yet");
                 }
