@@ -15,9 +15,14 @@ public class Spellblast : MonoBehaviour
     //sound for spell blast
     private AudioSource source;
 
+    private Animator anim;
+
     private void Start()
     {
         Destroy(gameObject, 2f);
+
+        anim = GetComponent<Animator>();
+        anim.SetTrigger("StartFireAnimation");
 
         rb2D = GetComponent<Rigidbody2D>();
         source = GetComponentInChildren<AudioSource>();
@@ -60,11 +65,19 @@ public class Spellblast : MonoBehaviour
 
             // Update the enemy's Rigidbody2D velocity to move toward the target.
             rb2D.velocity = moveDirection * moveSpeed;
+
+            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+            float orientationAdjustment = -90f; // Adjust this value as needed for your specific sprite orientation
+            angle -= orientationAdjustment;
+
+            // Set the rotation of the spellblast
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
         }
         else
         {
             // If the target is null (e.g., no enemies with the "Enemy" tag exist), stop moving.
             rb2D.velocity = Vector2.zero;
         }
+        
     }
 }
