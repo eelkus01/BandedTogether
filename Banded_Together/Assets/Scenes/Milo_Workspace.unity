@@ -56466,6 +56466,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1740526009}
     - target: {fileID: 6767994426021852639, guid: 42e72af0882e443ad9be08fc7c92c532, type: 3}
+      propertyPath: hasAllParts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767994426021852639, guid: 42e72af0882e443ad9be08fc7c92c532, type: 3}
       propertyPath: partsNeeded
       value: 3
       objectReference: {fileID: 0}

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class DrumAttack : MonoBehaviour
 {
-    private Transform objectTransform;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        objectTransform = transform;
-        StartCoroutine(AnimateScale());
+        // objectTransform = transform;
+        // StartCoroutine(AnimateScale());
+        anim = GetComponent<Animator>();
+
+        StartCoroutine(ScheduleDestroy());
+        anim.SetTrigger("StartAttack");
     }
 
     // Update is called once per frame
@@ -19,27 +23,9 @@ public class DrumAttack : MonoBehaviour
         
     }
 
-    private IEnumerator AnimateScale()
+    private IEnumerator ScheduleDestroy()
     {
-        // Scale up from Vector3.zero to Vector3(5, 4, 1) over the course of 0.5 seconds
-        float elapsedTime = 0f;
-        Vector3 initialScale = Vector3.zero;
-        Vector3 targetScale = new Vector3(5f, 4f, 1f);
-
-        while (elapsedTime < 0.5f)
-        {
-            objectTransform.localScale = Vector3.Lerp(initialScale, targetScale, elapsedTime / 0.5f);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        objectTransform.localScale = targetScale; // Ensure it's exactly at the target scale
-
-        // Wait for 0.25 seconds
-        yield return new WaitForSeconds(0.25f);
-
-        // Instantly scale back to zero
-        objectTransform.localScale = Vector3.zero;
+        yield return new WaitForSeconds(1f);
 
         // Destroy the object
         Destroy(gameObject);
