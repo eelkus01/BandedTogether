@@ -99,6 +99,11 @@ public class Enemy : MonoBehaviour
         {
             DamageEnemy(2);
         }
+        if (other.CompareTag("IceSpike"))
+        {
+            DamageEnemy(3);
+            Destroy(other.gameObject);
+        }
     }
 
     private void ApplyKnockback(Vector2 force)

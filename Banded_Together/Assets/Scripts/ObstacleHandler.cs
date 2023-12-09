@@ -24,5 +24,10 @@ public class ObstacleHandler : MonoBehaviour
             other.GetComponent<ImpactParticles>().CreateParticles();
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("IceSpike"))
+        {
+            // other.GetComponent<ImpactParticles>().CreateParticles();
+            Destroy(other.gameObject);
+        }
     }
 }
