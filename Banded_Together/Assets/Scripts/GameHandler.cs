@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameHandler : MonoBehaviour {
 
@@ -60,7 +61,7 @@ public class GameHandler : MonoBehaviour {
     }
 
     void UpdateParts(){
-        Text partsTextB = partsText.GetComponent<Text>();
+        TextMeshProUGUI partsTextB = partsText.GetComponent<TextMeshProUGUI>();
         partsTextB.text = "Parts: " + partsGotten + "/" + partsNeeded;
         //check if full instrument is gained
         if (partsGotten == partsNeeded){
