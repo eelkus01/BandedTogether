@@ -19,6 +19,8 @@ TagManager:
   - PartPickupOutline
   - DragonBall
   - Dragon
+  - IceSpikeAttack
+  - IceSpike
   layers:
   - Default
   - TransparentFX
