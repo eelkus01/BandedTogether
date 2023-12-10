@@ -61,7 +61,7 @@ public class GameHandler : MonoBehaviour {
 
     void UpdateParts(){
         Text partsTextB = partsText.GetComponent<Text>();
-        partsTextB.text = "Parts Obtained: " + partsGotten + "/" + partsNeeded;
+        partsTextB.text = "Parts: " + partsGotten + "/" + partsNeeded;
         //check if full instrument is gained
         if (partsGotten == partsNeeded){
             GainInstrument();
