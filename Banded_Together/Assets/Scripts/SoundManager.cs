@@ -14,7 +14,8 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            Load();
+            volumeSlider.value = 1f;
+            //Load();
         }
     }
 

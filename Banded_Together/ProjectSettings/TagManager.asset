@@ -21,6 +21,7 @@ TagManager:
   - Dragon
   - IceSpikeAttack
   - IceSpike
+  - PauseMenuSlider
   layers:
   - Default
   - TransparentFX

@@ -110,7 +110,7 @@ RectTransform:
   - {fileID: 4026998839361534662}
   - {fileID: 1777472190755592859}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1205,8 +1205,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: pauseHandler, Assembly-CSharp
-        m_MethodName: Resume
+        m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1401,7 +1401,7 @@ GameObject:
   - component: {fileID: 4778944813571842490}
   m_Layer: 5
   m_Name: VolumeSlider
-  m_TagString: Untagged
+  m_TagString: PauseMenuSlider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1474,10 +1474,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2101694570345533726}
   m_HandleRect: {fileID: 2281697141961796405}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
