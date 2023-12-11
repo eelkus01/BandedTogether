@@ -94,7 +94,11 @@ public class GameHandler : MonoBehaviour {
         Debug.Log("Making new attack available");
         hasAllParts = true;
         //make new instrument visible and attack available
-        instrumentIndicatorObjects[1].SetActive(true);
+        if (SceneManager.GetActiveScene().name == "DrumLevel") {
+            instrumentIndicatorObjects[1].SetActive(true);
+        } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
+            instrumentIndicatorObjects[2].SetActive(true);
+        }
 
         //open Dragon door
         GameObject door = GameObject.Find("NewDoor");
@@ -125,7 +129,20 @@ public class GameHandler : MonoBehaviour {
                     Debug.Log("Can't select instrument yet");
                 }
             }
+
+        //once all parts are collected, still don't allow piano selection
+        } else if (SceneManager.GetActiveScene().name == "DrumLevel") {
+                //allow singing and drum now
+                if (selectedInstrumentID == 1 || selectedInstrumentID == 2) {
+                    activeInstrumentID = selectedInstrumentID;
+                    foreach (var indicator in instrumentIndicators) {
+                        indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
+                    }
+                } else {
+                    Debug.Log("Can't select instrument yet");
+                }
         } else {
+            //assuming we're in PainoLevel, allow all 3 attack selections
             activeInstrumentID = selectedInstrumentID;
             foreach (var indicator in instrumentIndicators) {
                 indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
