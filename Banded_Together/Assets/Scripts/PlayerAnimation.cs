@@ -24,7 +24,6 @@ public class PlayerAnimation : MonoBehaviour
     }
 
     public void triggerHurtAnimation(){
-        Debug.Log("This is getting called correctly.");
         anim.SetTrigger("Hurt");
     }
 }
