@@ -12,10 +12,10 @@ public class Spellblast : MonoBehaviour
 
     private Rigidbody2D rb2D;        // Reference to the enemy's Rigidbody2D component.
 
-    //sound for spell blast
-    private AudioSource source;
+    private AudioSource source;     // Sound for spell blast
 
     private Animator anim;
+    public Camera cam;             // Camera variable to check if enemy is on screen
 
     private void Start()
     {
@@ -58,20 +58,28 @@ public class Spellblast : MonoBehaviour
     private void Update()
     {
         // Check if the target exists.
-        if (target != null)
-        {
-            // Calculate the direction from the enemy to the target.
-            Vector2 moveDirection = (target.position - transform.position).normalized;
+        if (target != null) { 
+            // Enemy is in camera view
+            if (!NotInCameraView(target)) {
+                Debug.Log("Enemy in camera view");
+                // Calculate the direction from the enemy to the target.
+                Vector2 moveDirection = (target.position - transform.position).normalized;
 
-            // Update the enemy's Rigidbody2D velocity to move toward the target.
-            rb2D.velocity = moveDirection * moveSpeed;
+                // Update the enemy's Rigidbody2D velocity to move toward the target.
+                rb2D.velocity = moveDirection * moveSpeed;
 
-            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
-            float orientationAdjustment = -90f; // Adjust this value as needed for your specific sprite orientation
-            angle -= orientationAdjustment;
+                float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+                float orientationAdjustment = -90f; // Adjust this value as needed for your specific sprite orientation
+                angle -= orientationAdjustment;
 
-            // Set the rotation of the spellblast
-            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+                // Set the rotation of the spellblast
+                transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+            
+            // Enemy not in camera view
+            } else {
+                Debug.Log("Enemy not in camera");
+                StartCoroutine(NonEnemyBlast());
+            }
         }
         else
         {
@@ -79,5 +87,40 @@ public class Spellblast : MonoBehaviour
             rb2D.velocity = Vector2.zero;
         }
         
+    }
+
+    IEnumerator NonEnemyBlast()
+    {
+        //add particle effect and then destroy
+        yield return new WaitForSeconds(1f);
+        transform.GetComponent<ImpactParticles>().CreateParticles();
+        Destroy(transform.gameObject);
+    }
+
+    bool NotInCameraView(Transform targetTrans)
+    {
+        // Target or camera aren't set
+        if (targetTrans == null || cam == null) {
+            return false;
+        }
+
+        // Get enemy renderer and collider bounds
+        Renderer targetRend = targetTrans.GetComponentInChildren<Renderer>();
+        Collider targetCol = targetTrans.GetComponent<Collider>();
+
+        if (targetRend == null && targetCol == null) {
+            return false;
+        }
+
+        Bounds targetBounds;
+
+        if (targetRend != null) {
+            targetBounds = targetRend.bounds;
+        } else {
+            targetBounds = targetCol.bounds;
+        }
+
+        // Check if target's bounds intersect with any of camera frustrum planes
+        return GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(cam), targetBounds);
     }
 }

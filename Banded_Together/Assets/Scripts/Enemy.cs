@@ -91,7 +91,7 @@ public class Enemy : MonoBehaviour
             int knockback = other.GetComponent<Spellblast>().knockback;
             ApplyKnockback(forceDirection * knockback);
 
-            //add particle effect before destroying
+            //add particle effect before destroying spell blast
             other.GetComponent<ImpactParticles>().CreateParticles();
             Destroy(other.gameObject);
         }
