@@ -151,13 +151,11 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void handleDeath(){
-        Debug.Log("handling death.");
         deathUI.SetActive(true);
         Time.timeScale = 0f;
     }
 
     public void ReplayLevel(){
-        Debug.Log("This is getting called");
         Time.timeScale = 1f;
         // GameHandler_PauseMenu.GameisPaused = false;
         partsGotten = 0;

@@ -21,6 +21,10 @@ public class PlayerMoveAround : MonoBehaviour
 
     private bool canDash = true;
     private bool isDashing;
+    private bool isFrozen;
+    private bool canBeFrozen = true;
+    public float postFrozenDuration = .5f;
+    public float frozenDuration = .5f;
     public float dashingPower = 24f;
     public float dashingTime = 0.1f;
     public float dashingCooldown = 1f;
@@ -38,7 +42,7 @@ public class PlayerMoveAround : MonoBehaviour
     {
         //NOTE: Horizontal axis: [a] / left arrow is -1, [d] / right arrow is 1
         //NOTE: Vertical axis: [w] / up arrow, [s] / down arrow
-        if (isDashing)
+        if (isDashing || isFrozen)
         {
             return;
         }
@@ -178,6 +182,23 @@ public class PlayerMoveAround : MonoBehaviour
         yield return new WaitForSeconds(knockbackDuration);
         isKnockedBack = false;
         rb2D.velocity = Vector2.zero; 
+    }
+
+    public void GetFrozen(){
+        if(canBeFrozen) {
+            GetComponent<PlayerStateManager>().getDamaged(4);
+            isFrozen = true;
+            canBeFrozen = false;
+            rb2D.velocity = Vector2.zero; 
+            StartCoroutine(ResetFrozen());
+        }
+    }
+
+    private IEnumerator ResetFrozen(){
+        yield return new WaitForSeconds(frozenDuration);
+        isFrozen = false;
+        yield return new WaitForSeconds(postFrozenDuration);
+        canBeFrozen = true;
     }
 
 }

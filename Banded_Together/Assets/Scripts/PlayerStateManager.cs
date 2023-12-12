@@ -26,7 +26,6 @@ public class PlayerStateManager : MonoBehaviour
             gameHandler.GetComponent<GameHandler>().handleDeath();
         }
         GetComponent<PlayerAnimation>().triggerHurtAnimation();
-        Debug.Log("Hurt animation should have gotten triggered.");
     }
 
     public void getHealed(int healAmount) {
