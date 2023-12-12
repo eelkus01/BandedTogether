@@ -101,7 +101,7 @@ public class Spellblast : MonoBehaviour
     {
         // Target or camera aren't set
         if (targetTrans == null || cam == null) {
-            return false;
+            return true;
         }
 
         // Get enemy renderer and collider bounds
@@ -109,7 +109,7 @@ public class Spellblast : MonoBehaviour
         Collider targetCol = targetTrans.GetComponent<Collider>();
 
         if (targetRend == null && targetCol == null) {
-            return false;
+            return true;
         }
 
         Bounds targetBounds;
