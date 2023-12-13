@@ -33,4 +33,11 @@ public class PlayerStateManager : MonoBehaviour
         healthBar.GetComponent<HealthBar>().UpdateHealthBar(currHealth, maxHealth);
     }
 
+    public void RespawnPlayer(Transform respawnPoint){
+        currHealth = maxHealth;
+        healthBar.GetComponent<HealthBar>().UpdateHealthBar(currHealth, maxHealth);
+
+        transform.position = respawnPoint.position;
+    }
+
 }

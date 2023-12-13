@@ -9,6 +9,7 @@ using TMPro;
 public class GameHandler : MonoBehaviour {
 
     private GameObject player;
+    public GameObject checkpointManager;
     private string sceneName;
     public GameObject partsText;
     public int partsGotten = 0;
@@ -156,10 +157,12 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void ReplayLevel(){
+        player.GetComponent<PlayerStateManager>().RespawnPlayer(checkpointManager.GetComponent<CheckpointManager>().getRespawnPoint());
         Time.timeScale = 1f;
+        deathUI.SetActive(false);
         // GameHandler_PauseMenu.GameisPaused = false;
-        partsGotten = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // partsGotten = 0;
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitGame(){
