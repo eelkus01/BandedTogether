@@ -100,31 +100,4 @@ public class Spellblast : MonoBehaviour
         transform.GetComponent<ImpactParticles>().CreateParticles();
         Destroy(transform.gameObject);
     }
-
-    bool NotInCameraView(Transform targetTrans)
-    {
-        // Target or camera aren't set
-        if (targetTrans == null || cam == null) {
-            return true;
-        }
-
-        // Get enemy renderer and collider bounds
-        Renderer targetRend = targetTrans.GetComponentInChildren<Renderer>();
-        Collider targetCol = targetTrans.GetComponent<Collider>();
-
-        if (targetRend == null && targetCol == null) {
-            return true;
-        }
-
-        Bounds targetBounds;
-
-        if (targetRend != null) {
-            targetBounds = targetRend.bounds;
-        } else {
-            targetBounds = targetCol.bounds;
-        }
-
-        // Check if target's bounds intersect with any of camera frustrum planes
-        return GeometryUtility.TestPlanesAABB(GeometryUtility.CalculateFrustumPlanes(cam), targetBounds);
-    }
 }
