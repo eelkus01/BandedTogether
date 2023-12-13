@@ -15,6 +15,7 @@ public class Spellblast : MonoBehaviour
     private AudioSource source;     // Sound for spell blast
 
     private Animator anim;
+    float outOfRangeDistance = 15f;
     public Camera cam;             // Camera variable to check if enemy is on screen
 
     private void Start()
@@ -59,12 +60,12 @@ public class Spellblast : MonoBehaviour
     {
         // Check if the target exists.
         if (target != null) { 
-            Vector2 viewPos = cam.WorldToViewportPoint(target.position);
-            // Enemy is in camera view
-            //if (!NotInCameraView(target)) {
-            if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1) {
-                Debug.Log("Enemy in camera view");
-                Debug.Log($"viewPos: x = {viewPos.x}, y = {viewPos.y}");
+            // Calculate the distance between the enemy and the current GameObject.
+            float distance = Vector2.Distance(transform.position, target.transform.position);
+
+            // If this enemy is closer than the previously closest one, update the variables.
+            if (distance < outOfRangeDistance)
+            {
                 // Calculate the direction from the enemy to the target.
                 Vector2 moveDirection = (target.position - transform.position).normalized;
 
@@ -77,9 +78,9 @@ public class Spellblast : MonoBehaviour
 
                 // Set the rotation of the spellblast
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
-            
+            }
             // Enemy not in camera view
-            } else {
+            else {
                 Debug.Log("Enemy not in camera");
                 StartCoroutine(NonEnemyBlast());
             }
