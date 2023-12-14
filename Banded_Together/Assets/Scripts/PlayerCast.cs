@@ -37,6 +37,7 @@ public class PlayerCast : MonoBehaviour
             Quaternion orientation;
             
             if(Time.time - lastSpawnTimes[selectedInstrument] >= cooldownDurations[selectedInstrument]) {
+                GetComponent<PlayerAnimation>().singWhenAttack();
                 if(selectedInstrument == 2) {
                     int direction = GetOrientation();
                     int[] targetDirections = new int[] { direction - 15, direction, direction + 15 };

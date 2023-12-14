@@ -26,4 +26,8 @@ public class PlayerAnimation : MonoBehaviour
     public void triggerHurtAnimation(){
         anim.SetTrigger("Hurt");
     }
+
+     public void singWhenAttack(){
+        anim.SetTrigger("Attack");
+    }
 }
