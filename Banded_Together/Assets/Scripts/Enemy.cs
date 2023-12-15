@@ -122,17 +122,20 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (alive)
         {
-            // Assuming the Player object has a script with a GetDamaged method
-            collision.gameObject.GetComponent<PlayerStateManager>().getDamaged(damage);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                // Assuming the Player object has a script with a GetDamaged method
+                collision.gameObject.GetComponent<PlayerStateManager>().getDamaged(damage);
 
-            // Knock back the player
-            Vector2 forceDirection = (collision.transform.position - transform.position).normalized;
-            collision.gameObject.GetComponent<PlayerMoveAround>().getKnockedBack(forceDirection, knockback);
+                // Knock back the player
+                Vector2 forceDirection = (collision.transform.position - transform.position).normalized;
+                collision.gameObject.GetComponent<PlayerMoveAround>().getKnockedBack(forceDirection, knockback);
 
-            // Destroy this object
-            Destroy(gameObject);
+                // Destroy this object
+                Destroy(gameObject);
+            }
         }
     }
 
