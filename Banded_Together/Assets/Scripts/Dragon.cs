@@ -17,6 +17,7 @@ public class Dragon : MonoBehaviour
     private bool movingLeft;
     public float speed = 5.0f;
     private bool returning = true;
+    public bool alive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -93,6 +94,7 @@ public class Dragon : MonoBehaviour
         }
         if (currentHealth <= 0){
             DestroySelf();
+            alive = false;
         }
     }
 
