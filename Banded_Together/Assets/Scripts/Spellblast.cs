@@ -41,8 +41,8 @@ public class Spellblast : MonoBehaviour
             // Calculate the distance between the enemy and the current GameObject.
             float distance = Vector2.Distance(transform.position, enemy.transform.position);
 
-            // If this enemy is closer than the previously closest one, update the variables.
-            if (distance < closestDistance)
+            // If this enemy is closer than the previously closest one, update the variables
+            if (distance < closestDistance && enemy.GetComponent<Enemy>().alive)
             {
                 closestEnemy = enemy.transform;
                 closestDistance = distance;
