@@ -42,10 +42,25 @@ public class Spellblast : MonoBehaviour
             float distance = Vector2.Distance(transform.position, enemy.transform.position);
 
             // If this enemy is closer than the previously closest one, update the variables
-            if (distance < closestDistance && (enemy.GetComponent<Enemy>().alive || enemy.GetComponent<Dragon>().alive))
+            //&& (enemy.GetComponent<Enemy>().alive || enemy.GetComponent<Dragon>().alive)
+            if (distance < closestDistance)
             {
-                closestEnemy = enemy.transform;
-                closestDistance = distance;
+                if (enemy.CompareTag("Enemy"))
+                {
+                    if (enemy.GetComponent<Enemy>().alive)
+                    {
+                        closestEnemy = enemy.transform;
+                        closestDistance = distance;
+                    }
+                }
+                if (enemy.CompareTag("Dragon"))
+                {
+                    if (enemy.GetComponent<Dragon>().alive)
+                    {
+                        closestEnemy = enemy.transform;
+                        closestDistance = distance;
+                    }
+                }
             }
         }
 

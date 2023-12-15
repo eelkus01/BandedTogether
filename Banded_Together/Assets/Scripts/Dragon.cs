@@ -94,7 +94,6 @@ public class Dragon : MonoBehaviour
         }
         if (currentHealth <= 0){
             DestroySelf();
-            alive = false;
         }
     }
 
