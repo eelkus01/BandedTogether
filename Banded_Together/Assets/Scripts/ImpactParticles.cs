@@ -18,6 +18,7 @@ public class ImpactParticles : MonoBehaviour{
     IEnumerator destroyParticles(GameObject pSys){
         yield return new WaitForSeconds(1f);
         Destroy(pSys);
+        Destroy(gameObject);
     }
 
     public void CreateParticles(){

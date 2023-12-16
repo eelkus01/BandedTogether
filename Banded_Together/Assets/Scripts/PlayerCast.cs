@@ -33,8 +33,6 @@ public class PlayerCast : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             // check which instrument is selected, than calculate if that instrument is ready to fire again
             var selectedInstrument = gameHandler.GetComponent<GameHandler>().activeInstrumentID - 1;
-
-            Quaternion orientation;
             
             if(Time.time - lastSpawnTimes[selectedInstrument] >= cooldownDurations[selectedInstrument]) {
                 GetComponent<PlayerAnimation>().singWhenAttack();
