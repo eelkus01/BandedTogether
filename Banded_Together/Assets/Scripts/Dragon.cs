@@ -35,7 +35,7 @@ public class Dragon : MonoBehaviour
         //check if on sreen before shooting fire balls
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance < outOfRangeDistance) {
+        
             if(phase == "start") {
                 if (movingLeft)
                 {
@@ -46,13 +46,14 @@ public class Dragon : MonoBehaviour
                     transform.Translate(Vector3.right * speed * Time.deltaTime);
                 }
                 if(firePhase == "start") {
+                    if (distance < outOfRangeDistance) {
                     StartCoroutine(SpawnDragonBallsRoutine(false));
                     firePhase = "running"; // Update the phase to prevent the coroutine from being called multiple times
+                    }
                 }
                 if(currentHealth <= angryHealth){
                     phase = "angry";
                 }
-            }
             if(phase == "angry") {
                 if(returning) {
                     transform.position = Vector3.MoveTowards(transform.position, startSpot, speed * Time.deltaTime);
