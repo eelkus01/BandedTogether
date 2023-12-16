@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 6781709548342564340}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &7434801921183184686
 BoxCollider2D:
@@ -140,7 +140,13 @@ MonoBehaviour:
   rb2D: {fileID: 0}
   startSpeed: 10
   isAlive: 1
+  dashCloud: {fileID: 5761447067450631775, guid: f8e398da3d1a44372a8c9e1c43fd42d8, type: 3}
+  numberOfClouds: 3
+  dashOutline: {fileID: 3470461577736452380, guid: 77b5bc3aebb2245cb83093997683168a, type: 3}
+  numberOfOutlines: 5
   doubleTapTimeThreshold: 0.5
+  postFrozenDuration: 0.5
+  frozenDuration: 0.5
   dashingPower: 40
   dashingTime: 0.1
   dashingCooldown: 0.3
@@ -160,7 +166,7 @@ MonoBehaviour:
   attackPrefabs:
   - {fileID: 67549156384315453, guid: 3aa563fc6af39401cbadcd841c2eb9f5, type: 3}
   - {fileID: 3448854756909606908, guid: dc69f308cc1b149048e13e69c128139d, type: 3}
-  - {fileID: 0}
+  - {fileID: 8870574613648838930, guid: 9e9a5c054a7554f7aabbe0afc92f9dea, type: 3}
   cooldownDurations:
   - 0.5
   - 2

@@ -56672,10 +56672,6 @@ PrefabInstance:
       propertyPath: gameHandler
       value: 
       objectReference: {fileID: 1920945886}
-    - target: {fileID: 201703741504082187, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: attackPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 8870574613648838930, guid: 9e9a5c054a7554f7aabbe0afc92f9dea, type: 3}
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -56720,14 +56716,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2908412271888037129, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: dashCloud
-      value: 
-      objectReference: {fileID: 5761447067450631775, guid: f8e398da3d1a44372a8c9e1c43fd42d8, type: 3}
-    - target: {fileID: 2908412271888037129, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
-      propertyPath: dashOutline
-      value: 
-      objectReference: {fileID: 3470461577736452380, guid: 77b5bc3aebb2245cb83093997683168a, type: 3}
     - target: {fileID: 6824744760783391070, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: healthBar
       value: 
