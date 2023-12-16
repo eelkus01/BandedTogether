@@ -7,6 +7,7 @@ public class DragonBall : MonoBehaviour
     public bool homing = false;
     public float moveSpeed = 10f;
     public int damage = 4;
+    public AudioSource fireSFX;
 
     private GameObject player;
     // Start is called before the first frame update
@@ -22,6 +23,8 @@ public class DragonBall : MonoBehaviour
         }
 
         player = GameObject.Find("Player");
+        fireSFX = GetComponent<AudioSource>();
+        fireSFX.Play();
     }
 
     // Update is called once per frame
