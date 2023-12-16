@@ -19,46 +19,57 @@ public class Dragon : MonoBehaviour
     private bool returning = true;
     public bool alive = true;
 
+    float outOfRangeDistance = 15f;
+    public Transform player;
+
     // Start is called before the first frame update
     void Start()
     {
         startSpot = transform.position;
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(phase == "start") {
-            if (movingLeft)
-            {
-                transform.Translate(Vector3.left * speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.Translate(Vector3.right * speed * Time.deltaTime);
-            }
-            if(firePhase == "start") {
-                StartCoroutine(SpawnDragonBallsRoutine(false));
-                firePhase = "running"; // Update the phase to prevent the coroutine from being called multiple times
-            }
-            if(currentHealth <= angryHealth){
-                phase = "angry";
-            }
-        }
-        if(phase == "angry") {
-            if(returning) {
-                transform.position = Vector3.MoveTowards(transform.position, startSpot, speed * Time.deltaTime);
+        //check if on sreen before shooting fire balls
+        float distance = Vector2.Distance(transform.position, player.transform.position);
 
-                if(transform.position == startSpot){
-                    returning = false;
+        if (distance < outOfRangeDistance) {
+            if(phase == "start") {
+                if (movingLeft)
+                {
+                    transform.Translate(Vector3.left * speed * Time.deltaTime);
                 }
-            }
-            else{
+                else
+                {
+                    transform.Translate(Vector3.right * speed * Time.deltaTime);
+                }
                 if(firePhase == "start") {
-                    StartCoroutine(SpawnDragonBallsRoutine(true));
-                firePhase = "running"; // Update the phase to prevent the coroutine from being called multiple times
+                    StartCoroutine(SpawnDragonBallsRoutine(false));
+                    firePhase = "running"; // Update the phase to prevent the coroutine from being called multiple times
+                }
+                if(currentHealth <= angryHealth){
+                    phase = "angry";
                 }
             }
+            if(phase == "angry") {
+                if(returning) {
+                    transform.position = Vector3.MoveTowards(transform.position, startSpot, speed * Time.deltaTime);
+
+                    if(transform.position == startSpot){
+                        returning = false;
+                    }
+                }
+                else{
+                    if(firePhase == "start") {
+                        StartCoroutine(SpawnDragonBallsRoutine(true));
+                    firePhase = "running"; // Update the phase to prevent the coroutine from being called multiple times
+                    }
+                }
+            }
+        } else {
+            Debug.Log("Dragon not on screen");
         }
     }
 
