@@ -16,7 +16,7 @@ public class Dragon : MonoBehaviour
     
     private bool movingLeft;
     public float speed = 5.0f;
-    private bool returning = true;
+    private bool returning = false;
     public bool alive = true;
 
     float outOfRangeDistance = 15f;
@@ -119,6 +119,7 @@ public class Dragon : MonoBehaviour
         }
         if (currentHealth <= angryHealth) {
             phase = "angry";
+            returning = true;
         }
     }
 
