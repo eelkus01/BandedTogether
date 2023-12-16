@@ -36,7 +36,6 @@ public class EnemySpawner : MonoBehaviour
             if(isActive){
                 activeArt.SetActive(true);
                 inactiveArt.SetActive(false);
-                spawnSFX.Play();
             }
             else{
                 activeArt.SetActive(false);
@@ -56,6 +55,7 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(interval); // Wait for the specified interval
             if(isActive){
+                spawnSFX.Play();
                 Instantiate(enemyPrefab, transform.position, transform.rotation); // Spawn the enemy at the current position
             }
         }
