@@ -22,11 +22,21 @@ public class Dragon : MonoBehaviour
     float outOfRangeDistance = 15f;
     public Transform player;
 
+    // Audio
+    public AudioClip hurtSFX;
+    public AudioClip deathSFX;
+    private AudioSource hurtSource;
+    private AudioSource deathSource;
+
     // Start is called before the first frame update
     void Start()
     {
         startSpot = transform.position;
         player = GameObject.FindWithTag("Player").transform;
+        hurtSource = gameObject.AddComponent<AudioSource>();
+        hurtSource.clip = hurtSFX;
+        deathSource = gameObject.AddComponent<AudioSource>();
+        deathSource.clip = deathSFX;
     }
 
     // Update is called once per frame
@@ -98,14 +108,17 @@ public class Dragon : MonoBehaviour
         firePhase = "start"; // Reset the phase to allow the routine to run again
     }
 
-    public void DamageEnemy(int damage) {
-
+    public void DamageEnemy(int damage)
+    {
         currentHealth -= damage;
+        if (currentHealth <= 0){
+            deathSource.Play();
+            DestroySelf();
+        } else {
+            hurtSource.Play();
+        }
         if (currentHealth <= angryHealth) {
             phase = "angry";
-        }
-        if (currentHealth <= 0){
-            DestroySelf();
         }
     }
 
