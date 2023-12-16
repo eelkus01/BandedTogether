@@ -87,7 +87,7 @@ public class Dragon : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         // Switch direction when a collision is detected
-        movingLeft = !movingLeft;
+        
     }
 
     IEnumerator SpawnDragonBallsRoutine(bool homing)
@@ -145,6 +145,12 @@ public class Dragon : MonoBehaviour
         if (other.CompareTag("DrumAttack"))
         {
             DamageEnemy(4);
+        }
+        if (other.CompareTag("Player")) {
+            other.GetComponent<PlayerStateManager>().getDamaged(5);
+        }
+        else{
+            movingLeft = !movingLeft;
         }
     }
 }
