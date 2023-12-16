@@ -28,8 +28,6 @@ public class PlayerMoveAround : MonoBehaviour
     public float dashingPower = 24f;
     public float dashingTime = 0.1f;
     public float dashingCooldown = 1f;
-
-    private bool isKnockedBack = false;
     public float knockbackDuration = .25f;
 
     void Start()
@@ -172,7 +170,6 @@ public class PlayerMoveAround : MonoBehaviour
     }
     private void ApplyKnockback(Vector2 force)
     {
-        isKnockedBack = true;
         rb2D.AddForce(force, ForceMode2D.Impulse);
         StartCoroutine(ResetKnockback());
     }
@@ -180,7 +177,6 @@ public class PlayerMoveAround : MonoBehaviour
     private IEnumerator ResetKnockback()
     {
         yield return new WaitForSeconds(knockbackDuration);
-        isKnockedBack = false;
         rb2D.velocity = Vector2.zero; 
     }
 

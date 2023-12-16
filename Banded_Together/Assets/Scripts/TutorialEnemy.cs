@@ -31,8 +31,6 @@ public class TutorialEnemy : MonoBehaviour
     private float flashTimer = 0f;
     private bool isFlashing = false;
 
-    private bool isKnockedBack = false;
-
 
     private void Start()
     {
