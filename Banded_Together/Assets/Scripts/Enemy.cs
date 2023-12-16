@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     public float knockbackDuration = .25f;
     private Rigidbody2D rb2D;
+    public AudioSource hurtSFX;
 
 
     // handle flashing red when damaged
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        hurtSFX = GetComponent<AudioSource>();
         rend = GetComponentInChildren<Renderer>();
         originalMaterial = rend.material;
 
@@ -85,6 +87,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Spellblast"))
         {
+            hurtSFX.Play();
             DamageEnemy(1);
 
             Vector2 forceDirection = (transform.position - other.transform.position).normalized;
@@ -97,10 +100,12 @@ public class Enemy : MonoBehaviour
         }
         if (other.CompareTag("DrumAttack"))
         {
+            hurtSFX.Play();
             DamageEnemy(2);
         }
         if (other.CompareTag("IceSpike"))
         {
+            hurtSFX.Play();
             DamageEnemy(3);
             Destroy(other.gameObject);
         }

@@ -10,9 +10,11 @@ public class EnemySpawner : MonoBehaviour
     private bool isActive = false; // Will only spawn enemy instances when active.
     private GameObject inactiveArt;
     private GameObject activeArt; // touch
+    public AudioSource spawnSFX;
 
     private void Start()
     {
+        spawnSFX = GetComponent<AudioSource>();
         StartCoroutine(SpawnEnemyAtIntervals(spawnInterval));
     }
 
@@ -34,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
             if(isActive){
                 activeArt.SetActive(true);
                 inactiveArt.SetActive(false);
+                spawnSFX.Play();
             }
             else{
                 activeArt.SetActive(false);
