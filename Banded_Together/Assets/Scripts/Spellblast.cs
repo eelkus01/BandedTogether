@@ -96,7 +96,6 @@ public class Spellblast : MonoBehaviour
             }
             // Enemy not in camera view
             else {
-                Debug.Log("Enemy not in camera");
                 StartCoroutine(NonEnemyBlast());
             }
         }

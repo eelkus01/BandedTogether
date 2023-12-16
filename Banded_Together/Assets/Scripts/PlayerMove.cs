@@ -13,6 +13,12 @@ public class PlayerMoveAround : MonoBehaviour
     public float startSpeed = 7f;
     public bool isAlive = true;
 
+    public GameObject dashCloud;
+    public int numberOfClouds = 3;
+
+    public GameObject dashOutline;
+    public int numberOfOutlines = 5;
+
     public float doubleTapTimeThreshold = 0.2f;
     private float llastTapTime;
     private float rlastTapTime;
@@ -136,15 +142,23 @@ public class PlayerMoveAround : MonoBehaviour
         {
             case 1: // Left
                 dashDirection = Vector2.left;
+                StartCoroutine(SpawnDashClouds("horizontal"));
+                StartCoroutine(SpawnDashOutlines("left"));
                 break;
             case 2: // Right
                 dashDirection = Vector2.right;
+                StartCoroutine(SpawnDashClouds("horizontal"));
+                StartCoroutine(SpawnDashOutlines("right"));
                 break;
             case 3: // Up
                 dashDirection = Vector2.up;
+                StartCoroutine(SpawnDashClouds("vertical"));
+                StartCoroutine(SpawnDashOutlines("up"));
                 break;
             case 4: // Down
                 dashDirection = Vector2.down;
+                StartCoroutine(SpawnDashClouds("vertical"));
+                StartCoroutine(SpawnDashOutlines("down"));
                 break;
         }
 
@@ -197,4 +211,52 @@ public class PlayerMoveAround : MonoBehaviour
         canBeFrozen = true;
     }
 
+    IEnumerator SpawnDashClouds(string playerOrientation)
+    {
+        for (int i = 0; i < numberOfClouds; i++)
+        {
+            // Instantiate the prefab
+            GameObject newInstance = Instantiate(dashCloud, transform.position, Quaternion.identity); // Adjust position as needed
+
+            // Access the Animator and set the trigger
+            Animator animator = newInstance.GetComponent<Animator>();
+            if (playerOrientation == "vertical")
+            {
+                animator.SetTrigger("ActivateVertical"); // Replace with your trigger name
+            }
+            else{
+                animator.SetTrigger("ActivateHorizontal");
+            }
+
+            // Wait for a fraction of the total duration before spawning the next object
+            yield return new WaitForSeconds(dashingTime / numberOfClouds);
+        }
+    }
+    IEnumerator SpawnDashOutlines(string playerOrientation)
+    {
+        for (int i = 0; i < numberOfOutlines; i++)
+        {
+            // Instantiate the prefab
+            GameObject newInstance = Instantiate(dashOutline, transform.position, Quaternion.identity); // Adjust position as needed
+
+            // Access the Animator and set the trigger
+            Animator animator = newInstance.GetComponent<Animator>();
+            if (playerOrientation == "left")
+            {
+                animator.SetTrigger("ActivateOutlineLeft"); // Replace with your trigger name
+            }
+            else if (playerOrientation =="right"){
+                animator.SetTrigger("ActivateOutlineRight");
+            }
+            else if (playerOrientation =="up"){
+                animator.SetTrigger("ActivateOutlineUp");
+            }
+            else{
+                animator.SetTrigger("ActivateOutlineDown");
+            }
+
+            // Wait for a fraction of the total duration before spawning the next object
+            yield return new WaitForSeconds(dashingTime / numberOfOutlines);
+        }
+    }
 }
