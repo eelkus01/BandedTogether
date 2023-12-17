@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
     private bool isFlashing = false;
 
     private bool isKnockedBack = false;
+    private Vector2 lockedPosition = Vector2.zero;
     
 
     private void Start()
@@ -79,6 +80,12 @@ public class Enemy : MonoBehaviour
                 rend.material = originalMaterial;
                 isFlashing = false;
             }
+        }
+    }
+
+    private void FixedUpdate() {
+        if(lockedPosition != Vector2.zero) {
+            transform.position = lockedPosition;
         }
     }
     // for collisions with attacks
@@ -161,6 +168,7 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator KillEnemy(){
         if (alive){
+            lockedPosition = transform.position;
             anim.Play("Explode");
             alive = false;
             yield return new WaitForSeconds(1f);
