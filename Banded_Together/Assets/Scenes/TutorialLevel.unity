@@ -437,11 +437,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4603642647864873872, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4603642647864873872, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_Size.y
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4903632103843439506, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_Name
@@ -465,11 +465,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513469297061148178, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5513469297061148178, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5513469297061148178, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_Offset.x
@@ -486,6 +486,14 @@ PrefabInstance:
     - target: {fileID: 7058744382631321109, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: m_Name
       value: micWire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748930778740581005, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_Size.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7748930778740581005, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
+      propertyPath: m_Size.y
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7882453597061848156, guid: 0b8c04c8c637b47bc8d86547c587a8c0, type: 3}
       propertyPath: part
