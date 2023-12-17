@@ -15,6 +15,10 @@ public class Dragon : MonoBehaviour
     public int currentHealth = 25;
     private Renderer rend;
     public Material redFlashMaterial;
+    private Material originalMaterial;
+    private bool isFlashing;
+    public float flashDuration = 0.2f;
+    private float flashTimer = 0f;
     
     private bool movingLeft;
     public float speed = 5.0f;
@@ -34,6 +38,8 @@ public class Dragon : MonoBehaviour
     void Start()
     {
         startSpot = transform.position;
+        rend = GetComponentInChildren<Renderer>();
+        originalMaterial = rend.material;
         player = GameObject.FindWithTag("Player").transform;
         hurtSource = gameObject.AddComponent<AudioSource>();
         hurtSource.clip = hurtSFX;
@@ -82,6 +88,16 @@ public class Dragon : MonoBehaviour
                     }
                 }
             }
+            if (isFlashing)
+            {
+            flashTimer -= Time.deltaTime;
+                if (flashTimer <= 0f)
+                {
+                    // Stop flashing and restore the original material.
+                    rend.material = originalMaterial;
+                    isFlashing = false;
+                }
+            }
         } 
 
     void OnCollisionEnter2D(Collision2D other)
@@ -111,6 +127,13 @@ public class Dragon : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         currentHealth -= damage;
+        if (!isFlashing)
+        {
+            // Trigger the red flash effect.
+            rend.material = redFlashMaterial;
+            flashTimer = flashDuration;
+            isFlashing = true;
+        }
         if (currentHealth <= 0){
             deathSource.Play();
             DestroySelf();
