@@ -101,8 +101,7 @@ public class Spellblast : MonoBehaviour
         }
         else
         {
-            // If the target is null (e.g., no enemies with the "Enemy" tag exist), stop moving.
-            rb2D.velocity = Vector2.zero;
+            StartCoroutine(NonEnemyBlast());
         }
         
     }
