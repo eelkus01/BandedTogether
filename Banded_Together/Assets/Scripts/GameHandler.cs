@@ -20,7 +20,7 @@ public class GameHandler : MonoBehaviour {
     public bool hasAllParts = false;
     public GameObject[] instrumentIndicatorObjects;
 
-    void Start(){
+    void Start() {
         UpdateParts();
         player = GameObject.FindWithTag("Player");
         GameObject deathUI = GameObject.Find("DeadCanvas");
@@ -39,7 +39,11 @@ public class GameHandler : MonoBehaviour {
         }
 
         //make only 1st instrument visible to start
-        if (SceneManager.GetActiveScene().name == "DrumLevel") {
+        if (SceneManager.GetActiveScene().name == "TutorialLevel"){
+            instrumentIndicatorObjects[0].SetActive(false);
+            instrumentIndicatorObjects[1].SetActive(false);
+            instrumentIndicatorObjects[2].SetActive(false);
+        }else if (SceneManager.GetActiveScene().name == "DrumLevel") {
             instrumentIndicatorObjects[0].SetActive(true);
             instrumentIndicatorObjects[1].SetActive(false);
             instrumentIndicatorObjects[2].SetActive(false);
@@ -95,7 +99,9 @@ public class GameHandler : MonoBehaviour {
         Debug.Log("Making new attack available");
         hasAllParts = true;
         //make new instrument visible and attack available
-        if (SceneManager.GetActiveScene().name == "DrumLevel") {
+        if (SceneManager.GetActiveScene().name == "TutorialLevel"){
+            instrumentIndicatorObjects[0].SetActive(true);
+        } else if (SceneManager.GetActiveScene().name == "DrumLevel") {
             instrumentIndicatorObjects[1].SetActive(true);
         } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
             instrumentIndicatorObjects[2].SetActive(true);
@@ -109,29 +115,53 @@ public class GameHandler : MonoBehaviour {
     private void UpdateSelectedInstrument(int selectedInstrumentID){
         //check for all parts before allowing selection
         if (!hasAllParts) {
-            if (SceneManager.GetActiveScene().name == "DrumLevel") {
+            if (SceneManager.GetActiveScene().name == "DrumLevel")
+            {
                 //just allow singing
-                if (selectedInstrumentID == 1) {
+                if (selectedInstrumentID == 1)
+                {
                     activeInstrumentID = selectedInstrumentID;
-                    foreach (var indicator in instrumentIndicators) {
+                    foreach (var indicator in instrumentIndicators)
+                    {
                         indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
                     }
-                } else {
+                }
+                else
+                {
                     Debug.Log("Can't select instrument yet");
                 }
-            } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
+            }
+            else if (SceneManager.GetActiveScene().name == "PianoLevel")
+            {
                 //just allow singing and drum
-                if (selectedInstrumentID == 1 || selectedInstrumentID == 2) {
+                if (selectedInstrumentID == 1 || selectedInstrumentID == 2)
+                {
                     activeInstrumentID = selectedInstrumentID;
-                    foreach (var indicator in instrumentIndicators) {
+                    foreach (var indicator in instrumentIndicators)
+                    {
                         indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
                     }
-                } else {
+                }
+                else
+                {
                     Debug.Log("Can't select instrument yet");
                 }
             }
 
         //once all parts are collected, still don't allow piano selection
+        } else if (SceneManager.GetActiveScene().name == "TutorialLevel"){
+            if (selectedInstrumentID == 1)
+            {
+                activeInstrumentID = selectedInstrumentID;
+                foreach (var indicator in instrumentIndicators)
+                {
+                    indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
+                }
+            }
+            else
+            {
+                Debug.Log("Can't select instrument yet");
+            }
         } else if (SceneManager.GetActiveScene().name == "DrumLevel") {
                 //allow singing and drum now
                 if (selectedInstrumentID == 1 || selectedInstrumentID == 2) {
