@@ -33,7 +33,7 @@ Transform:
   - {fileID: 4235812564072903329}
   - {fileID: 6151686049229446661}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4424077490502427196
 MonoBehaviour:
@@ -50,6 +50,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1280835518525579470, guid: 095aab05055a74dad817f4c2bb9b6783, type: 3}
   spawnInterval: 5
   activationDistance: 10
+  spawnSFX: {fileID: 0}
 --- !u!82 &9082638235191857466
 AudioSource:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ Transform:
   m_GameObject: {fileID: 709481243908545602}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6240857610762525129}
@@ -219,8 +220,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.8187532, g: 0, b: 0.9716981, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8e5ec08e1875f496ca4438c277efc714, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -256,7 +257,7 @@ Transform:
   m_GameObject: {fileID: 5448527911930990009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6240857610762525129}
@@ -303,8 +304,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6d13e54de21f8467bae4b5d30dc883ba, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
