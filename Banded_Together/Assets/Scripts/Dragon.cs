@@ -143,7 +143,6 @@ public class Dragon : MonoBehaviour
         if (currentHealth <= angryHealth) {
             phase = "angry";
             returning = true;
-            Debug.Log("Got angry and am returning.");
         }
     }
 
@@ -156,7 +155,6 @@ public class Dragon : MonoBehaviour
         if (other.CompareTag("Spellblast"))
         {
             if(!returning){
-                Debug.Log("Taking damage.");
                 DamageEnemy(2);
             }
             // Vector2 forceDirection = (transform.position - other.transform.position).normalized;
