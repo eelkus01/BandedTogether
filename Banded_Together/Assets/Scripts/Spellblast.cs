@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Spellblast : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class Spellblast : MonoBehaviour
 
             // If this enemy is closer than the previously closest one, update the variables
             //&& (enemy.GetComponent<Enemy>().alive || enemy.GetComponent<Dragon>().alive)
+            if (SceneManager.GetActiveScene().name == "TutorialLevel"){
+                closestEnemy = enemy.transform;
+                closestDistance = distance;
+            }
             if (distance < closestDistance)
             {
                 if (enemy.CompareTag("Enemy"))
