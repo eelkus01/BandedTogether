@@ -22,6 +22,8 @@ TagManager:
   - IceSpikeAttack
   - IceSpike
   - PauseMenuSlider
+  - Checkpoint
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,8 @@ public class Dragon : MonoBehaviour
     public int angryHealth = 12;
     public int weakHealth = 5;
     public int currentHealth = 25;
+    private Renderer rend;
+    public Material redFlashMaterial;
     
     private bool movingLeft;
     public float speed = 5.0f;
@@ -64,6 +66,7 @@ public class Dragon : MonoBehaviour
                 if(currentHealth <= angryHealth){
                     phase = "angry";
                 }
+            }
             if(phase == "angry") {
                 if(returning) {
                     transform.position = Vector3.MoveTowards(transform.position, startSpot, speed * Time.deltaTime);
@@ -79,10 +82,7 @@ public class Dragon : MonoBehaviour
                     }
                 }
             }
-        } else {
-            Debug.Log("Dragon not on screen");
-        }
-    }
+        } 
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -120,6 +120,7 @@ public class Dragon : MonoBehaviour
         if (currentHealth <= angryHealth) {
             phase = "angry";
             returning = true;
+            Debug.Log("Got angry and am returning.");
         }
     }
 
@@ -132,6 +133,7 @@ public class Dragon : MonoBehaviour
         if (other.CompareTag("Spellblast"))
         {
             if(!returning){
+                Debug.Log("Taking damage.");
                 DamageEnemy(2);
             }
             // Vector2 forceDirection = (transform.position - other.transform.position).normalized;
@@ -149,7 +151,7 @@ public class Dragon : MonoBehaviour
         if (other.CompareTag("Player")) {
             other.GetComponent<PlayerStateManager>().getDamaged(5);
         }
-        else{
+        else if (other.CompareTag("Obstacle")){
             movingLeft = !movingLeft;
         }
     }
