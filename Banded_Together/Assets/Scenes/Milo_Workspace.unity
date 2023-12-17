@@ -56678,11 +56678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6
+      value: 58.1
       objectReference: {fileID: 0}
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 133.9
+      value: 99.2
       objectReference: {fileID: 0}
     - target: {fileID: 1324641599730154467, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57134,6 +57134,14 @@ PrefabInstance:
     - target: {fileID: 6761446574525046068, guid: 54ea9fa293cc648ff889d5bd173678a8, type: 3}
       propertyPath: m_Name
       value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823588284438444704, guid: 54ea9fa293cc648ff889d5bd173678a8, type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8823588284438444704, guid: 54ea9fa293cc648ff889d5bd173678a8, type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
