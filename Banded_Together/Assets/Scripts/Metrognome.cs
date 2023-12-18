@@ -53,11 +53,15 @@ public class Metrognome : MonoBehaviour
         {
             talkCanvasVisible = true;
             talkToShow.SetActive(true);
+            // Puase the scene
+            Time.timeScale = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.E) && talkCanvasVisible)
         {
             talkCanvasVisible = false;
             talkToShow.SetActive(false);
+            // Unpause game
+            Time.timeScale = 1f;
         }
     }
 }
