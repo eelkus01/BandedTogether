@@ -21,9 +21,11 @@ public class GameHandler : MonoBehaviour {
     public GameObject[] instrumentIndicatorObjects;
 
     void Start() {
-        hasAllParts = false;
         if (SceneManager.GetActiveScene().name != "LearnEarth"){
             UpdateParts();
+            hasAllParts = false;
+        } else {
+            hasAllParts = true;
         }
         player = GameObject.FindWithTag("Player");
         GameObject deathUI = GameObject.Find("DeadCanvas");

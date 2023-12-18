@@ -275,6 +275,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3096448709471915084, guid: eca2aa335641e49f49ecee77563dbfa6, type: 3}
   m_PrefabInstance: {fileID: 346977170}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &360956406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6688700271877846500, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+  m_PrefabInstance: {fileID: 7946738185980418601}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &393490329
 GameObject:
   m_ObjectHideFlags: 0
@@ -41459,6 +41464,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5087083960864858429, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: NextLevel
       value: LevelTwo
@@ -47962,7 +47971,7 @@ PrefabInstance:
     - target: {fileID: 6824744760783391070, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 360956406}
     - target: {fileID: 6824744760783391070, guid: 85fca7dd9982b43d9a698f7bd3b8a55a, type: 3}
       propertyPath: gameHandler
       value: 
@@ -48055,7 +48064,9 @@ PrefabInstance:
 
         You
         can select this attack spell by pressing 2 on your keyboard and pressing
-        the spacebar to cast it. Try it now!'
+        the spacebar to cast it. It will hurt any enemy within its radius with greater
+        power than a fireblast. The only downside, your earthquake abilities need
+        longer to recharge. Try it out now!'
       objectReference: {fileID: 0}
     - target: {fileID: 5410037204827836769, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
       propertyPath: m_Name
@@ -48152,11 +48163,13 @@ PrefabInstance:
 
         Now try using it to attack a
         monser. Don''t worry, just like in the beginning, these monsters won''t hurt
-        you if you don''t get too close. Practice your attacks on them so you''ll
-        be ready for what awaits you.....'
+        you. Practice your attacks on them so you''ll be ready for what awaits you.....'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8031393517815312361, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
+    - {fileID: 5721223504993083468, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
+    - {fileID: 7140947190603484271, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}

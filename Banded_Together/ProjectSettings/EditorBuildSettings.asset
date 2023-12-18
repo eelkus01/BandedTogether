@@ -14,6 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialLevel.unity
     guid: 6bbe0ffbc77e74aeeba01b0bae1837dc
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: f8c01745b99c946a8985067cc7da9396
+  - enabled: 1
+    path: Assets/Scenes/LearnEarth.unity
+    guid: 2ea93cdd05f124111aceea4424104938
+  - enabled: 1
+    path: Assets/Scenes/EarthDragonLevel.unity
+    guid: 83793ac195fcb4568b89dca4909f37cf
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: e1a8173708c4a40eca642797618e1014
   - enabled: 0
     path: Assets/Scenes/Eleanor_Workspace.unity
     guid: 2cda990e2423bbf4892e6590ba056729
@@ -26,10 +38,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Jacob_WS.unity
     guid: 89e1cd1a5bac34510aae4be219c9fdc8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DrumLevel.unity
     guid: 0fc64fe87da5b49159ed4e15e2c21301
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PianoLevel.unity
     guid: d7e1b774668414340a18dac956cf0ace
   m_configObjects: {}

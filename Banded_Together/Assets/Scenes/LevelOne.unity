@@ -323,6 +323,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.7169812
       objectReference: {fileID: 0}
+    - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: NextLevel
+      value: LearnEarth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: gameHandler
+      value: 
+      objectReference: {fileID: 2045339616}
     - target: {fileID: 6454942821106574631, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: m_Name
       value: Door
