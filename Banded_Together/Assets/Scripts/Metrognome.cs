@@ -10,12 +10,17 @@ public class Metrognome : MonoBehaviour
     private bool playerInRange = false;
     private bool talkCanvasVisible = false;
     private GameObject talkUI;
+    public GameObject talkToShow;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         talkUI = GameObject.Find("TalkCanvas");
-        talkUI.SetActive(false);
+        talkUI.SetActive(true);
+
+        if (talkToShow != null) {
+            talkToShow.SetActive(false);
+        }
 
         // Assuming the sprite is the first child, adjust as needed
         interactArt = transform.GetChild(0).GetComponent<SpriteRenderer>();
@@ -47,14 +52,12 @@ public class Metrognome : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && playerInRange && !talkCanvasVisible)
         {
             talkCanvasVisible = true;
-            talkUI.SetActive(true);
+            talkToShow.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.E) && talkCanvasVisible)
         {
             talkCanvasVisible = false;
-            talkUI.SetActive(false);
+            talkToShow.SetActive(false);
         }
-
-
     }
 }
