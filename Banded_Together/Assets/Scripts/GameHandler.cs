@@ -43,7 +43,7 @@ public class GameHandler : MonoBehaviour {
             instrumentIndicatorObjects[0].SetActive(false);
             instrumentIndicatorObjects[1].SetActive(false);
             instrumentIndicatorObjects[2].SetActive(false);
-        }else if (SceneManager.GetActiveScene().name == "DrumLevel") {
+        }else if (SceneManager.GetActiveScene().name == "LevelOne") {
             instrumentIndicatorObjects[0].SetActive(true);
             instrumentIndicatorObjects[1].SetActive(false);
             instrumentIndicatorObjects[2].SetActive(false);
@@ -101,7 +101,7 @@ public class GameHandler : MonoBehaviour {
         //make new instrument visible and attack available
         if (SceneManager.GetActiveScene().name == "TutorialLevel"){
             instrumentIndicatorObjects[0].SetActive(true);
-        } else if (SceneManager.GetActiveScene().name == "DrumLevel") {
+        } else if (SceneManager.GetActiveScene().name == "LevelOne") {
             instrumentIndicatorObjects[1].SetActive(true);
         } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
             instrumentIndicatorObjects[2].SetActive(true);
@@ -115,7 +115,7 @@ public class GameHandler : MonoBehaviour {
     private void UpdateSelectedInstrument(int selectedInstrumentID){
         //check for all parts before allowing selection
         if (!hasAllParts) {
-            if (SceneManager.GetActiveScene().name == "DrumLevel")
+            if (SceneManager.GetActiveScene().name == "LevelOne")
             {
                 //just allow singing
                 if (selectedInstrumentID == 1)
@@ -162,7 +162,7 @@ public class GameHandler : MonoBehaviour {
             {
                 Debug.Log("Can't select instrument yet");
             }
-        } else if (SceneManager.GetActiveScene().name == "DrumLevel") {
+        } else if (SceneManager.GetActiveScene().name == "LevelOne") {
                 //allow singing and drum now
                 if (selectedInstrumentID == 1 || selectedInstrumentID == 2) {
                     activeInstrumentID = selectedInstrumentID;
