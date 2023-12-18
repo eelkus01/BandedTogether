@@ -38,22 +38,20 @@ public class GameHandler : MonoBehaviour {
             }
         }
 
-        //make only 1st instrument visible to start
-        if (SceneManager.GetActiveScene().name == "TutorialLevel"){
+        //make only some instruments visible to start
+        if (SceneManager.GetActiveScene().name == "TutorialLevel"){ // No instruments
             instrumentIndicatorObjects[0].SetActive(false);
             instrumentIndicatorObjects[1].SetActive(false);
             instrumentIndicatorObjects[2].SetActive(false);
-        }else if (SceneManager.GetActiveScene().name == "LevelOne") {
+        }else if (SceneManager.GetActiveScene().name == "LevelOne") { // Only singing
             instrumentIndicatorObjects[0].SetActive(true);
             instrumentIndicatorObjects[1].SetActive(false);
             instrumentIndicatorObjects[2].SetActive(false);
-        } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
+        } else if (SceneManager.GetActiveScene().name == "LevelTwo" || SceneManager.GetActiveScene().name == "LearnEarth") { // Singing and Drum
             instrumentIndicatorObjects[0].SetActive(true);
             instrumentIndicatorObjects[1].SetActive(true);
             instrumentIndicatorObjects[2].SetActive(false);
-        }
-
-        //make only 1st attack available
+        } //NOTE: FILL IN FOR LEARN ICE AND ICE DRAGON LEVELS
     }
 
     void Update(){
@@ -99,11 +97,11 @@ public class GameHandler : MonoBehaviour {
         Debug.Log("Making new attack available");
         hasAllParts = true;
         //make new instrument visible and attack available
-        if (SceneManager.GetActiveScene().name == "TutorialLevel"){
+        if (SceneManager.GetActiveScene().name == "TutorialLevel"){ // Make singing
             instrumentIndicatorObjects[0].SetActive(true);
-        } else if (SceneManager.GetActiveScene().name == "LevelOne") {
+        } else if (SceneManager.GetActiveScene().name == "LevelOne") { // Make earth
             instrumentIndicatorObjects[1].SetActive(true);
-        } else if (SceneManager.GetActiveScene().name == "PianoLevel") {
+        } else if (SceneManager.GetActiveScene().name == "LevelTwo") { // Make ice
             instrumentIndicatorObjects[2].SetActive(true);
         }
 
@@ -115,51 +113,39 @@ public class GameHandler : MonoBehaviour {
     private void UpdateSelectedInstrument(int selectedInstrumentID){
         //check for all parts before allowing selection
         if (!hasAllParts) {
-            if (SceneManager.GetActiveScene().name == "LevelOne")
-            {
+            if (SceneManager.GetActiveScene().name == "LevelOne") {
                 //just allow singing
-                if (selectedInstrumentID == 1)
-                {
+                if (selectedInstrumentID == 1) {
                     activeInstrumentID = selectedInstrumentID;
                     foreach (var indicator in instrumentIndicators)
                     {
                         indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
                     }
-                }
-                else
-                {
+                } else {
                     Debug.Log("Can't select instrument yet");
                 }
-            }
-            else if (SceneManager.GetActiveScene().name == "PianoLevel")
-            {
+            } else if (SceneManager.GetActiveScene().name == "LevelTwo") {
                 //just allow singing and drum
-                if (selectedInstrumentID == 1 || selectedInstrumentID == 2)
-                {
+                if (selectedInstrumentID == 1 || selectedInstrumentID == 2) {
                     activeInstrumentID = selectedInstrumentID;
                     foreach (var indicator in instrumentIndicators)
                     {
                         indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
                     }
-                }
-                else
-                {
+                } else {
                     Debug.Log("Can't select instrument yet");
                 }
             }
 
         //once all parts are collected, still don't allow piano selection
         } else if (SceneManager.GetActiveScene().name == "TutorialLevel"){
-            if (selectedInstrumentID == 1)
-            {
+            if (selectedInstrumentID == 1) {
                 activeInstrumentID = selectedInstrumentID;
                 foreach (var indicator in instrumentIndicators)
                 {
                     indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
                 }
-            }
-            else
-            {
+            } else {
                 Debug.Log("Can't select instrument yet");
             }
         } else if (SceneManager.GetActiveScene().name == "LevelOne") {
@@ -173,7 +159,7 @@ public class GameHandler : MonoBehaviour {
                     Debug.Log("Can't select instrument yet");
                 }
         } else {
-            //assuming we're in PainoLevel, allow all 3 attack selections
+            //assuming we're in LevelTwo, allow all 3 attack selections
             activeInstrumentID = selectedInstrumentID;
             foreach (var indicator in instrumentIndicators) {
                 indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);

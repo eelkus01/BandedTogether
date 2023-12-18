@@ -8,19 +8,16 @@ public class PartsPickup : MonoBehaviour {
     public Image part;
     //public Image bigPart;
     public GameObject bigPartObject;
-    //public playerVFX playerPowerupVFX;
 
     void Start(){
         gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         part.gameObject.SetActive(false);
         bigPartObject.gameObject.SetActive(false);
-        //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
     }
 
     public void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.tag == "Player"){
             GetComponent<Collider2D>().enabled = false;
-            //GetComponent<AudioSource>().Play();
             StartCoroutine(DestroyThis());
             Destroy(gameObject.transform.GetChild(0).gameObject);
             gameHandlerObj.AddParts();
