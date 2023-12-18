@@ -324,13 +324,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 132276175074139724}
   target: {fileID: 0}
-  moveSpeed: 3
   startHealth: 5
   alive: 1
   currentHealth: 0
   damage: 5
-  knockback: 10
-  knockbackDuration: 0.25
   redFlashMaterial: {fileID: 2100000, guid: f7864d59ccd904aca9ea443e4b8fb2c0, type: 2}
   flashDuration: 0.25
   hurtSFX: {fileID: 0}
