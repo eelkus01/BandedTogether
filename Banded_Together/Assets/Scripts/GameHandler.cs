@@ -21,7 +21,10 @@ public class GameHandler : MonoBehaviour {
     public GameObject[] instrumentIndicatorObjects;
 
     void Start() {
-        UpdateParts();
+        hasAllParts = false;
+        if (SceneManager.GetActiveScene().name != "LearnEarth"){
+            UpdateParts();
+        }
         player = GameObject.FindWithTag("Player");
         GameObject deathUI = GameObject.Find("DeadCanvas");
         deathUI.SetActive(false);
@@ -148,7 +151,7 @@ public class GameHandler : MonoBehaviour {
             } else {
                 Debug.Log("Can't select instrument yet");
             }
-        } else if (SceneManager.GetActiveScene().name == "LevelOne") {
+        } else if (SceneManager.GetActiveScene().name == "LevelOne" || SceneManager.GetActiveScene().name == "LearnEarth") {
                 //allow singing and drum now
                 if (selectedInstrumentID == 1 || selectedInstrumentID == 2) {
                     activeInstrumentID = selectedInstrumentID;

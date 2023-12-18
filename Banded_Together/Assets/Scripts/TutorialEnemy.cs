@@ -6,21 +6,11 @@ public class TutorialEnemy : MonoBehaviour
 {
     public Animator anim;
     public Transform target;          // The target to follow (usually the player).
-    public float moveSpeed = 3f;     // The speed at which the enemy follows the target.
-
     public int startHealth = 5;
-
     public bool alive = true;
-
     public int currentHealth;
-
     public int damage = 5;
-
-    public int knockback = 10;
-
-    public float knockbackDuration = .25f;
     private Rigidbody2D rb2D;
-
 
     // handle flashing red when damaged
     public Material redFlashMaterial; // Assign the material with the "RedFlashShader" here.
