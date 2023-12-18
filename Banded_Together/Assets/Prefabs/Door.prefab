@@ -117,7 +117,7 @@ Transform:
   - {fileID: 7743434291431589888}
   - {fileID: 477989350321821360}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &5087083960864858429
 BoxCollider2D:
@@ -148,7 +148,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.08498061, y: 0.38666126}
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameHandler: {fileID: 0}
-  NextLevel: MainMenu
+  NextLevel: LevelTwo
   exitClosed: {fileID: 5543827268545702766}
   exitOpen: {fileID: 7387139522083314767}
   piecesCollected: 0
