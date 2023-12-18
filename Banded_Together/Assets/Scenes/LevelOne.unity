@@ -197,6 +197,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 503181076}
     m_Modifications:
+    - target: {fileID: 2661147302480666120, guid: fbdf03b436f1047e5aa1001ac555b7ef, type: 3}
+      propertyPath: checkpointManager
+      value: 
+      objectReference: {fileID: 503181074}
     - target: {fileID: 8042960303100998920, guid: fbdf03b436f1047e5aa1001ac555b7ef, type: 3}
       propertyPath: m_Name
       value: Checkpoint (1)
@@ -307,9 +311,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2531198715463016171, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24688502
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531198715463016171, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.g
+      value: 0.452001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2531198715463016171, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7169812
+      objectReference: {fileID: 0}
     - target: {fileID: 6454942821106574631, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753674955312796746, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24688502
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753674955312796746, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.g
+      value: 0.452001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753674955312796746, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7169812
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -75205,6 +75233,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 503181076}
     m_Modifications:
+    - target: {fileID: 2661147302480666120, guid: fbdf03b436f1047e5aa1001ac555b7ef, type: 3}
+      propertyPath: checkpointManager
+      value: 
+      objectReference: {fileID: 503181074}
     - target: {fileID: 8042960303100998920, guid: fbdf03b436f1047e5aa1001ac555b7ef, type: 3}
       propertyPath: m_Name
       value: Checkpoint
