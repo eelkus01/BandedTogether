@@ -5,36 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Play : MonoBehaviour
 {
-    public GameObject creditsUI;
-    public GameObject rules;
 
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("TutorialLevel");
-
     }
 
     public void OpenCredits()
     {
-        creditsUI.SetActive(true);
+        SceneManager.LoadSceneAsync("CreditsScene");
     }
 
     public void CloseCredits()
     {
-        creditsUI.SetActive(false);
-
-    }
-
-    public void ShowRules()
-    {
-        rules.SetActive(true);
-
-    }
-
-    public void CloseRules()
-    {
-        rules.SetActive(false);
-
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 
 }

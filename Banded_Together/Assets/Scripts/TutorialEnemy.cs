@@ -30,12 +30,13 @@ public class TutorialEnemy : MonoBehaviour
     private Renderer rend;
     private float flashTimer = 0f;
     private bool isFlashing = false;
-
+    public AudioSource hurtSFX;
 
     private void Start()
     {
         rend = GetComponentInChildren<Renderer>();
         originalMaterial = rend.material;
+        hurtSFX = GetComponent<AudioSource>();
 
         currentHealth = startHealth;
 
@@ -77,6 +78,7 @@ public class TutorialEnemy : MonoBehaviour
     {
         if (other.CompareTag("Spellblast"))
         {
+            hurtSFX.Play();
             DamageEnemy(1);
 
             //add particle effect before destroying spell blast
@@ -85,10 +87,12 @@ public class TutorialEnemy : MonoBehaviour
         }
         if (other.CompareTag("DrumAttack"))
         {
+            hurtSFX.Play();
             DamageEnemy(2);
         }
         if (other.CompareTag("IceSpike"))
         {
+            hurtSFX.Play();
             DamageEnemy(3);
             Destroy(other.gameObject);
         }
