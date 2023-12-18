@@ -41470,7 +41470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: NextLevel
-      value: EarthDragon
+      value: EarthDragonLevel
       objectReference: {fileID: 0}
     - target: {fileID: 6089575883955316592, guid: 11068f93fd7f342f9b4ee92580bb3c05, type: 3}
       propertyPath: gameHandler
@@ -48162,8 +48162,9 @@ PrefabInstance:
 
 
         Now try using it to attack a
-        monser. Don''t worry, just like in the beginning, these monsters won''t hurt
-        you. Practice your attacks on them so you''ll be ready for what awaits you.....'
+        monster. Don''t worry, just like in the beginning, these monsters won''t
+        hurt you. Practice your attacks on them so you''ll be ready for what awaits
+        you.....'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
