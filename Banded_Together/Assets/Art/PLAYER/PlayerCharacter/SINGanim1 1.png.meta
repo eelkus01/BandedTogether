@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 749e648545d294f1aad144eb4f319233
+guid: cc2f04bb1c1364022a2d7d93e1ea4427
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,24 +106,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SINGanimforward_0
+      name: SINGanim1 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8dccbf659e691476aa7bd628b7e762bf
-      internalID: 929505904
+      spriteID: 27fa28f2baaa448b1a71de3808a4c93a
+      internalID: 1815933660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SINGanimforward_1
+      name: SINGanim1 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4aaef6509720f410fb388f40e47a1d7a
-      internalID: 2009425328
+      spriteID: 1596aa700284442798c30394af472de3
+      internalID: -980329814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SINGanimforward_2
+      name: SINGanim1 1_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da899fbc1beb145c2824f3d60ee3cb10
-      internalID: -1198692686
+      spriteID: a5fd22aeebfc84b269fdf172684978b0
+      internalID: -76318428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SINGanimforward_3
+      name: SINGanim1 1_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ad0d19b5cffa4158b595bda0257ad08
-      internalID: 1545181195
+      spriteID: d42cc510c3eb2458d894c30a475fc3d4
+      internalID: 1123960024
       vertices: []
       indices: 
       edges: []
@@ -217,10 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SINGanimforward_0: 929505904
-      SINGanimforward_1: 2009425328
-      SINGanimforward_2: -1198692686
-      SINGanimforward_3: 1545181195
+      SINGanim1 1_0: 1815933660
+      SINGanim1 1_1: -980329814
+      SINGanim1 1_2: -76318428
+      SINGanim1 1_3: 1123960024
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
