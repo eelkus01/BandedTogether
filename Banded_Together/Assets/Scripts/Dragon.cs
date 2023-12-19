@@ -19,6 +19,8 @@ public class Dragon : MonoBehaviour
     private bool isFlashing;
     public float flashDuration = 0.2f;
     private float flashTimer = 0f;
+
+    public float dragonBallWaitTime = 3f;
     
     private bool movingLeft;
     public float speed = 5.0f;
@@ -119,7 +121,7 @@ public class Dragon : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(dragonBallWaitTime);
 
         firePhase = "start"; // Reset the phase to allow the routine to run again
     }
