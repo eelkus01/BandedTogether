@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class DragonBall : MonoBehaviour
 {
@@ -9,11 +11,16 @@ public class DragonBall : MonoBehaviour
     public float moveSpeed = 10f;
     public int damage = 4;
     public AudioSource fireSFX;
+    
 
     private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        if (SceneManager.GetActiveScene().name == "IceDragon")
+        {
+            moveSpeed = 13f;
+        }
         Collider2D[] colliders = FindObjectsOfType<Collider2D>(); // Find all colliders in the scene
         foreach (Collider2D collider in colliders)
         {
