@@ -76806,10 +76806,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 296.3128
       objectReference: {fileID: 0}
+    - target: {fileID: 5509379412101431761, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: pianoIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472952974766396392, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: voiceIndicator
+      objectReference: {fileID: 0}
     - target: {fileID: 6634502230157235794, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 12513c1551c9d457ea65ce2b6ecf4fd6, type: 3}
+    - target: {fileID: 7223517547594607833, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: drumIndicator
+      objectReference: {fileID: 0}
     - target: {fileID: 8114132710512864783, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_Sprite
       value: 
