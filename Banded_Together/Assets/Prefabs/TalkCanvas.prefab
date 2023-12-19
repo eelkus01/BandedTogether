@@ -942,7 +942,7 @@ RectTransform:
   - {fileID: 1326607073305800566}
   - {fileID: 5325055166252424362}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1617,14 +1617,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome, traveler! An evil dragon has destroyed all of your instruments,
-    and with it your magical skills! You must rebuild your band and fine tune your
-    fighting skills to defeat the evil music haters!
+  m_text: 'Welcome, traveler! I''m your trusty companion, Metrognome. An evil dragon
+    has destroyed all of your instruments, and with it your magical skills! You must
+    rebuild your band and fine tune your fighting skills to defeat the evil music
+    haters!
 
 
-    But don''t worry, I''ll
-    be there to guide you through it all. Follow my directions and you can''t go
-    wrong!'
+    But don''t worry, I''ll be there to guide you through it all. Follow
+    my directions and you can''t go wrong!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d941e85b3d4cc4b83afcad2c1318a8ec, type: 2}
   m_sharedMaterial: {fileID: -952924558506288070, guid: d941e85b3d4cc4b83afcad2c1318a8ec, type: 2}
