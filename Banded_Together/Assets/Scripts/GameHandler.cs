@@ -23,7 +23,7 @@ public class GameHandler : MonoBehaviour {
 
     void Start() {
         if (SceneManager.GetActiveScene().name == "LearnEarth" || SceneManager.GetActiveScene().name == "EarthDragonLevel"
-            || SceneManager.GetActiveScene().name == "IceDragon"){
+            || SceneManager.GetActiveScene().name == "IceDragon" || SceneManager.GetActiveScene().name == "LearnIceAttack"){
             hasAllParts = true;
         } else {
             UpdateParts();
@@ -60,7 +60,7 @@ public class GameHandler : MonoBehaviour {
             instrumentIndicatorObjects[0].SetActive(true);
             instrumentIndicatorObjects[1].SetActive(true);
             instrumentIndicatorObjects[2].SetActive(false);
-        } else if (SceneManager.GetActiveScene().name == "IceDragon") { //allow all 3
+        } else if (SceneManager.GetActiveScene().name == "IceDragon" || SceneManager.GetActiveScene().name == "LearnIceAttack") { //allow all 3
             instrumentIndicatorObjects[0].SetActive(true);
             instrumentIndicatorObjects[1].SetActive(true);
             instrumentIndicatorObjects[2].SetActive(true);
