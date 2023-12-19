@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IceDragon.unity
     guid: 4ffe9195ead0a497ba97fcbe7d328b90
+  - enabled: 1
+    path: Assets/Scenes/YouWon.unity
+    guid: 2703e532f4b8041c3b20372bbfa84d60
   - enabled: 0
     path: Assets/Scenes/Eleanor_Workspace.unity
     guid: 2cda990e2423bbf4892e6590ba056729

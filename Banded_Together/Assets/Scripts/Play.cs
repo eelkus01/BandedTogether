@@ -21,4 +21,12 @@ public class Play : MonoBehaviour
         SceneManager.LoadSceneAsync("MainMenu");
     }
 
+    public void QuitGame(){
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
+    }
+
 }
