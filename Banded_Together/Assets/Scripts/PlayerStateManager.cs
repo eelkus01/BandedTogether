@@ -9,6 +9,7 @@ public class PlayerStateManager : MonoBehaviour
 
     public GameObject healthBar;
     public GameObject gameHandler;
+    public AudioSource hurtSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class PlayerStateManager : MonoBehaviour
        currHealth = maxHealth;
        healthBar =  GameObject.FindGameObjectWithTag("HealthBar");
        gameHandler = GameObject.Find("GameHandler");
+       hurtSFX = GetComponent<AudioSource>();
     }
 
     public void getDamaged(int damage){
@@ -25,6 +27,7 @@ public class PlayerStateManager : MonoBehaviour
         if(currHealth <= 0) {
             gameHandler.GetComponent<GameHandler>().handleDeath();
         }
+        hurtSFX.Play();
         GetComponent<PlayerAnimation>().triggerHurtAnimation();
     }
 
