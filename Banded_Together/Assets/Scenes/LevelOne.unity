@@ -95304,6 +95304,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5509379412101431761, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: pianoIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472952974766396392, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: voiceIndicator
+      objectReference: {fileID: 0}
     - target: {fileID: 7088903361861738352, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_SizeDelta.x
       value: -831.6149
@@ -95323,6 +95331,10 @@ PrefabInstance:
     - target: {fileID: 7088903361861738352, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 100.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223517547594607833, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: drumIndicator
       objectReference: {fileID: 0}
     - target: {fileID: 9211906706326570209, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_Name
