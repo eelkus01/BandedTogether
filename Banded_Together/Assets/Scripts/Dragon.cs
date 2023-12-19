@@ -170,6 +170,9 @@ public class Dragon : MonoBehaviour
         {
             DamageEnemy(4);
         }
+        if(other.CompareTag("IceSpike")) {
+            DamageEnemy(3);
+        }
         if (other.CompareTag("Player")) {
             other.GetComponent<PlayerStateManager>().getDamaged(5);
         }
