@@ -48539,6 +48539,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1469289215266268494, guid: e50ae76bf23e946a3a61631b6f5742b6, type: 3}
   m_PrefabInstance: {fileID: 2941277304156456670}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &504462610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6340625325623826782, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
+  m_PrefabInstance: {fileID: 3453244727590869992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &511162716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67995,6 +68000,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1382627176622929760, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
+      propertyPath: m_text
+      value: Welcome to frozen tundra! Gather piano parts to gain the piano attack!
+      objectReference: {fileID: 0}
     - target: {fileID: 5410037204827836769, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
       propertyPath: m_Name
       value: TalkCanvas
@@ -68144,6 +68153,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8963490446551346998, guid: 3499ef05dca3647ec90d93fcbc51dc6a, type: 3}
+      propertyPath: talkToShow
+      value: 
+      objectReference: {fileID: 504462610}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
