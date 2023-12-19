@@ -24,6 +24,9 @@ TagManager:
   - PauseMenuSlider
   - Checkpoint
   - Obstacle
+  - voiceIndicator
+  - drumIndicator
+  - pianoIndicator
   layers:
   - Default
   - TransparentFX

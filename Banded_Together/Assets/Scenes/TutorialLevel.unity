@@ -11600,6 +11600,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b4e53aa623e8244abb86304c226c3ae6, type: 3}
+    - target: {fileID: 5509379412101431761, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: pianoIndicator
+      objectReference: {fileID: 0}
     - target: {fileID: 5643651540611509471, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -100
@@ -11612,6 +11616,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d30d64b4889eb477bba56b1098aedb1f, type: 3}
+    - target: {fileID: 6472952974766396392, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: voiceIndicator
+      objectReference: {fileID: 0}
     - target: {fileID: 6625907899662499558, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 100
@@ -11643,6 +11651,10 @@ PrefabInstance:
     - target: {fileID: 7088903361861738352, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 305.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223517547594607833, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_TagString
+      value: drumIndicator
       objectReference: {fileID: 0}
     - target: {fileID: 8003591663849722620, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_Sprite

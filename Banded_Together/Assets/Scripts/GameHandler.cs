@@ -18,7 +18,11 @@ public class GameHandler : MonoBehaviour {
     public int activeInstrumentID;
     public GameObject deathUI;
     public bool hasAllParts = false;
-    public GameObject[] instrumentIndicatorObjects;
+    public GameObject voiceIndicator;
+    public GameObject drumIndicator;
+    public GameObject pianoIndicator;
+
+    public GameObject[] instrumentIndicatorObjects = new GameObject[3];
     public GameObject healthBar;
 
     void Start() {
@@ -33,7 +37,15 @@ public class GameHandler : MonoBehaviour {
         GameObject deathUI = GameObject.Find("DeadCanvas");
         deathUI.SetActive(false);
 
-        instrumentIndicatorObjects = GameObject.FindGameObjectsWithTag("InstrumentIndicator");
+        voiceIndicator = GameObject.FindGameObjectWithTag("voiceIndicator");
+        drumIndicator = GameObject.FindGameObjectWithTag("drumIndicator");
+        pianoIndicator = GameObject.FindGameObjectWithTag("pianoIndicator");
+
+
+        instrumentIndicatorObjects[0] = voiceIndicator;
+        instrumentIndicatorObjects[1] = drumIndicator;
+        instrumentIndicatorObjects[2] = pianoIndicator;
+        
         instrumentIndicators = new List<InstrumentIndicator>();
         healthBar =  GameObject.FindGameObjectWithTag("HealthBar");
 
