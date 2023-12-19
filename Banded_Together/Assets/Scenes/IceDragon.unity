@@ -21659,6 +21659,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1382627176622929760, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
+      propertyPath: m_text
+      value: Incredible work traveler! You've nearly made it! I wish I could say
+        it is smooth sailing from here, but the gnome hairs on the back of my neck
+        are standing up. I sense a presence in the area and it feels scarier and
+        more powerful than before......
+      objectReference: {fileID: 0}
     - target: {fileID: 5410037204827836769, guid: 31c2e5a6717214f9791d9846ea1c24a0, type: 3}
       propertyPath: m_Name
       value: TalkCanvas
