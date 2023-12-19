@@ -5,6 +5,7 @@ using UnityEngine;
 public class DragonBall : MonoBehaviour
 {
     public bool homing = false;
+    public bool bottom = false;
     public float moveSpeed = 10f;
     public int damage = 4;
     public AudioSource fireSFX;
@@ -32,7 +33,12 @@ public class DragonBall : MonoBehaviour
     {
         // move straight down if not homing
         if(!homing) {
-            transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+            if (!bottom) {
+                transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+            } else {
+                //bottom dragon should shoot fire up
+                transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+            }
         }
         else {
             //move towards player

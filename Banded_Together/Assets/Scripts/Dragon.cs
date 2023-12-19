@@ -26,6 +26,7 @@ public class Dragon : MonoBehaviour
     public float speed = 5.0f;
     private bool returning = false;
     public bool alive = true;
+    public bool bottom = false;
 
     float outOfRangeDistance = 15f;
     public Transform player;
@@ -54,8 +55,6 @@ public class Dragon : MonoBehaviour
     {
         //check if on sreen before shooting fire balls
         float distance = Vector2.Distance(transform.position, player.transform.position);
-
-        
             if(phase == "start") {
                 if (movingLeft)
                 {
@@ -111,12 +110,12 @@ public class Dragon : MonoBehaviour
     IEnumerator SpawnDragonBallsRoutine(bool homing)
     {
         float startTime = Time.time;
-
         while (Time.time - startTime < 5)
         {
             Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y, 0); // Z-coordinate set to 0
             GameObject newDragonBall = Instantiate(dragonBallPrefab, spawnPosition, Quaternion.identity);
             newDragonBall.GetComponent<DragonBall>().homing = homing;
+            newDragonBall.GetComponent<DragonBall>().bottom = bottom;
 
             yield return new WaitForSeconds(0.5f);
         }

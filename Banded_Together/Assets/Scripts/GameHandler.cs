@@ -22,7 +22,8 @@ public class GameHandler : MonoBehaviour {
     public GameObject healthBar;
 
     void Start() {
-        if (SceneManager.GetActiveScene().name == "LearnEarth" || SceneManager.GetActiveScene().name == "EarthDragonLevel"){
+        if (SceneManager.GetActiveScene().name == "LearnEarth" || SceneManager.GetActiveScene().name == "EarthDragonLevel"
+            || SceneManager.GetActiveScene().name == "IceDragon"){
             hasAllParts = true;
         } else {
             UpdateParts();
@@ -59,7 +60,11 @@ public class GameHandler : MonoBehaviour {
             instrumentIndicatorObjects[0].SetActive(true);
             instrumentIndicatorObjects[1].SetActive(true);
             instrumentIndicatorObjects[2].SetActive(false);
-        } //NOTE: FILL IN FOR LEARN ICE AND ICE DRAGON LEVELS
+        } else if (SceneManager.GetActiveScene().name == "IceDragon") { //allow all 3
+            instrumentIndicatorObjects[0].SetActive(true);
+            instrumentIndicatorObjects[1].SetActive(true);
+            instrumentIndicatorObjects[2].SetActive(true);
+        }
     }
 
     void Update(){
@@ -169,6 +174,7 @@ public class GameHandler : MonoBehaviour {
                 }
         } else {
             //assuming we're in LevelTwo, allow all 3 attack selections
+            //this applies for IceDragon and LearnIce levels
             activeInstrumentID = selectedInstrumentID;
             foreach (var indicator in instrumentIndicators) {
                 indicator.SetSelectedState(indicator.instrumentID == selectedInstrumentID);
