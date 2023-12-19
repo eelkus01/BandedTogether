@@ -80349,6 +80349,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1131256374950065587, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.036489826
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131256374950065587, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.036489826
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131256374950065587, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.03773582
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131256374950065587, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278782218
+      objectReference: {fileID: 0}
     - target: {fileID: 2925671776228026019, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -80433,10 +80449,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4997779749603982642, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
-      propertyPath: m_Name
-      value: ButtonRetry
-      objectReference: {fileID: 0}
     - target: {fileID: 7011784450334718159, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 0.5
@@ -80465,14 +80477,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2045339616}
-    - target: {fileID: 7011784450334718159, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReplayLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293784691894378749, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 8122106551388322738, guid: 4fa69a3aeca434c8c9942c3d32dd69bd, type: 3}
       propertyPath: m_Name
       value: DeadCanvas
@@ -95299,6 +95303,26 @@ PrefabInstance:
     - target: {fileID: 4791989938126106886, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088903361861738352, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -831.6149
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088903361861738352, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088903361861738352, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088903361861738352, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088903361861738352, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 100.7
       objectReference: {fileID: 0}
     - target: {fileID: 9211906706326570209, guid: 95332bb2ddc284e7184be8ed6838e892, type: 3}
       propertyPath: m_Name

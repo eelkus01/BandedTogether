@@ -8,7 +8,7 @@ public class CheckpointManager : MonoBehaviour
     GameObject[] checkpoints;
     Transform[] checkpointTransforms;
     // Start is called before the first frame update
-     void Start()
+    void Start()
     {
         // Find all objects with the "Checkpoint" tag
         checkpoints = GameObject.FindGameObjectsWithTag("Checkpoint");
@@ -54,10 +54,12 @@ public class CheckpointManager : MonoBehaviour
     }
 
     public Transform getRespawnPoint() {
-        return checkpointTransforms[activeCheckpointId];
+        if (activeCheckpointId != -1) {
+            return checkpointTransforms[activeCheckpointId];
+        } else {
+            return null;
+        }
     }
-
-
 
     public static string TransformToDebugString(Transform transform)
     {

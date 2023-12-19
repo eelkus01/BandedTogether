@@ -19,6 +19,7 @@ public class GameHandler : MonoBehaviour {
     public GameObject deathUI;
     public bool hasAllParts = false;
     public GameObject[] instrumentIndicatorObjects;
+    public GameObject healthBar;
 
     void Start() {
         if (SceneManager.GetActiveScene().name == "LearnEarth" || SceneManager.GetActiveScene().name == "EarthDragonLevel"){
@@ -33,6 +34,7 @@ public class GameHandler : MonoBehaviour {
 
         instrumentIndicatorObjects = GameObject.FindGameObjectsWithTag("InstrumentIndicator");
         instrumentIndicators = new List<InstrumentIndicator>();
+        healthBar =  GameObject.FindGameObjectWithTag("HealthBar");
 
         //restrict this to only show instrument 1 at start of level 1
         //and instruments 1 and 2 at start of level 2
@@ -180,12 +182,18 @@ public class GameHandler : MonoBehaviour {
     }
 
     public void ReplayLevel(){
-        player.GetComponent<PlayerStateManager>().RespawnPlayer(checkpointManager.GetComponent<CheckpointManager>().getRespawnPoint());
-        Time.timeScale = 1f;
-        deathUI.SetActive(false);
-        // GameHandler_PauseMenu.GameisPaused = false;
-        // partsGotten = 0;
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Transform checkID = checkpointManager.GetComponent<CheckpointManager>().getRespawnPoint();
+        if (checkID != null) {
+            player.GetComponent<PlayerStateManager>().RespawnPlayer(checkID);
+            Time.timeScale = 1f;
+            deathUI.SetActive(false);
+        } else {
+            partsGotten = 0;
+            healthBar.GetComponent<HealthBar>().ResetHealth();
+            Time.timeScale = 1f;
+            deathUI.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void QuitGame(){

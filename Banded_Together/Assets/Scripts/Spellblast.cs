@@ -44,7 +44,7 @@ public class Spellblast : MonoBehaviour
 
             // If this enemy is closer than the previously closest one, update the variables
             //&& (enemy.GetComponent<Enemy>().alive || enemy.GetComponent<Dragon>().alive)
-            if (SceneManager.GetActiveScene().name == "TutorialLevel"){
+            if (SceneManager.GetActiveScene().name == "TutorialLevel" || SceneManager.GetActiveScene().name == "LearnEarth"){
                 closestEnemy = enemy.transform;
                 closestDistance = distance;
             }

@@ -108,12 +108,12 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("DrumAttack"))
         {
             hurtSFX.Play();
-            DamageEnemy(2);
+            DamageEnemy(3);
         }
         if (other.CompareTag("IceSpike"))
         {
             hurtSFX.Play();
-            DamageEnemy(3);
+            DamageEnemy(4);
             Destroy(other.gameObject);
         }
     }

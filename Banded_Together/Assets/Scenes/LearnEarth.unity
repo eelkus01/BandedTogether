@@ -44077,6 +44077,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6392731879784591407, guid: eca2aa335641e49f49ecee77563dbfa6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7461796671306523892, guid: eca2aa335641e49f49ecee77563dbfa6, type: 3}
       propertyPath: m_Name
       value: TutorialEnemy (1)
@@ -44520,6 +44524,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3096448709471915084, guid: eca2aa335641e49f49ecee77563dbfa6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6392731879784591407, guid: eca2aa335641e49f49ecee77563dbfa6, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7461796671306523892, guid: eca2aa335641e49f49ecee77563dbfa6, type: 3}

@@ -24,4 +24,8 @@ public class HealthBar : MonoBehaviour
         healthBarTransform.localScale = new Vector3(scaleFactor, 1f, 1f);
     }
 
+    public void ResetHealth() {
+        healthBarTransform.localScale = new Vector3(1f, 1f, 1f);
+    }
+
 }
